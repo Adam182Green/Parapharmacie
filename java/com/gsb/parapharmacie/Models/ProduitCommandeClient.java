@@ -1,16 +1,15 @@
 package com.gsb.parapharmacie.Models;
 
 public class ProduitCommandeClient {
-    public int idProduit;
-    public Produit produit;
-    public int idCommandeClient;
-    public CommandeClient commandeClient;
-    public int quantite;
+    private int idProduit;
+    private Produit produit;
+    private int idCommandeClient;
+    private CommandeClient commandeClient;
+    private int quantite;
 
     public int getIdProduit() {
         return idProduit;
     }
-
     public void setIdProduit(int idProduit) {
         this.idProduit = idProduit;
     }
@@ -18,7 +17,6 @@ public class ProduitCommandeClient {
     public Produit getProduit() {
         return produit;
     }
-
     public void setProduit(Produit produit) {
         this.produit = produit;
     }
@@ -26,7 +24,6 @@ public class ProduitCommandeClient {
     public int getIdCommandeClient() {
         return idCommandeClient;
     }
-
     public void setIdCommandeClient(int idCommandeClient) {
         this.idCommandeClient = idCommandeClient;
     }
@@ -34,7 +31,6 @@ public class ProduitCommandeClient {
     public CommandeClient getCommandeClient() {
         return commandeClient;
     }
-
     public void setCommandeClient(CommandeClient commandeClient) {
         this.commandeClient = commandeClient;
     }
@@ -42,7 +38,6 @@ public class ProduitCommandeClient {
     public int getQuantite() {
         return quantite;
     }
-
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }

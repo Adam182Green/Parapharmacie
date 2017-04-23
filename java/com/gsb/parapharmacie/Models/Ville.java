@@ -1,16 +1,15 @@
 package com.gsb.parapharmacie.Models;
 
 public class Ville {
-    public int id;
-    public String numDepartement;
-    public Departement departement;
-    public String nom;
-    public String codePostal;
+    private int id;
+    private String numDepartement;
+    //private Departement departement;
+    private String nom;
+    private String codePostal;
 
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -18,23 +17,20 @@ public class Ville {
     public String getNumDepartement() {
         return numDepartement;
     }
-
     public void setNumDepartement(String numDepartement) {
         this.numDepartement = numDepartement;
     }
 
-    public Departement getDepartement() {
-        return departement;
-    }
-
-    public void setDepartement(Departement departement) {
-        this.departement = departement;
-    }
+//    public Departement getDepartement() {
+//        return departement;
+//    }
+//    public void setDepartement(Departement departement) {
+//        this.departement = departement;
+//    }
 
     public String getNom() {
         return nom;
     }
-
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -42,7 +38,6 @@ public class Ville {
     public String getCodePostal() {
         return codePostal;
     }
-
     public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
     }

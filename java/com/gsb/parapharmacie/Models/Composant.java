@@ -1,13 +1,12 @@
 package com.gsb.parapharmacie.Models;
 
 public class Composant {
-    public int id;
-    public String libelle;
+    private int id;
+    private String libelle;
 
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -15,7 +14,6 @@ public class Composant {
     public String getLibelle() {
         return libelle;
     }
-
     public void setLibelle(String libelle) {
         this.libelle = libelle;
     }

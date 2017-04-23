@@ -53,8 +53,6 @@ public class NewAccountActivity extends AppCompatActivity {
     private String getClientsUrl = "http://localhost:64684/API/Clients/GetAll/";
     private String getVillesUrl = "http://localhost:64684/API/Villes/GetAll";
     private WebService webService = new WebService();
-    private static final String TAG = NewAccountActivity.class.getSimpleName();
-    String string;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +73,11 @@ public class NewAccountActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        AsyncTask<Void, Void, Departement> execute = new AsyncTask<Void, Void, Departement>() {
+        AsyncTask<Void, Void, List<Ville>> execute = new AsyncTask<Void, Void, List<Ville>>() {
             @Override
-            protected Departement doInBackground(Void... params) {
+            protected List<Ville> doInBackground(Void... params) {
                 try {
-                    return webService.getDepartement("http://poujat-thibault.fr/android_login_api/test.php");
+                    return webService.getVillesByCodePostal("Hello");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -87,8 +85,8 @@ public class NewAccountActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onPostExecute(Departement result) {
-                prenomET.setText(result.getNom());
+            protected void onPostExecute(List<Ville> result) {
+                prenomET.setText(result.get(0).toString());
             }
         }.execute();
     }

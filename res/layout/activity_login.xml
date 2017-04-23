@@ -15,7 +15,7 @@
             android:hint="Email"
             android:layout_centerHorizontal="true"/>
         <EditText
-            android:id="@+id/loginETPassword"
+            android:id="@+id/loginETMdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -23,12 +23,12 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/loginETEmail"/>
         <Button
-            android:id="@+id/loginBLogin"
+            android:id="@+id/loginBConnexion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Connexion"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/loginETPassword"/>
+            android:layout_below="@id/loginETMdp"/>
     </RelativeLayout>
 
     <TextView

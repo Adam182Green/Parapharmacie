@@ -9,14 +9,14 @@
         android:layout_centerVertical="true">
 
         <EditText
-            android:id="@+id/newAccountETFirstName"
+            android:id="@+id/newAccountETPrenom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Prénom"
             android:layout_toLeftOf="@+id/newAccountETEmail"
             android:layout_toStartOf="@+id/newAccountETEmail" />
         <EditText
-            android:id="@+id/newAccountETLastName"
+            android:id="@+id/newAccountETNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Nom"
@@ -24,20 +24,20 @@
             android:layout_toEndOf="@id/newAccountETEmail"/>
 
         <EditText
-            android:id="@+id/newAccountETAddress"
+            android:id="@+id/newAccountETAdresse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Adresse"
             android:layout_toLeftOf="@+id/newAccountETEmail"
             android:layout_toStartOf="@+id/newAccountETEmail"
-            android:layout_below="@id/newAccountETFirstName"/>
+            android:layout_below="@id/newAccountETPrenom"/>
         <Spinner
-            android:id="@+id/newAccoutETTown"
+            android:id="@+id/newAccountSVilles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/newAccountETEmail"
             android:layout_toEndOf="@id/newAccountETEmail"
-            android:layout_below="@id/newAccountETFirstName"/>
+            android:layout_below="@id/newAccountETPrenom"/>
 
         <EditText
             android:id="@+id/newAccountETTelephone"
@@ -46,7 +46,7 @@
             android:inputType="phone"
             android:hint="Téléphone"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETAddress"/>
+            android:layout_below="@id/newAccountETAdresse"/>
         <EditText
             android:id="@+id/newAccountETEmail"
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/newAccountETTelephone"/>
         <EditText
-            android:id="@+id/newAccountETPassword"
+            android:id="@+id/newAccountETMdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -64,20 +64,20 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/newAccountETEmail"/>
         <EditText
-            android:id="@+id/newAccountETPasswordConfirm"
+            android:id="@+id/newAccountETMdpConfirmer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Confirmez mot de passe"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETPassword"/>
+            android:layout_below="@id/newAccountETMdp"/>
         <Button
-            android:id="@+id/newAccountBNewaccount"
+            android:id="@+id/newAccountBNouvCompte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Créer"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETPasswordConfirm"/>
+            android:layout_below="@id/newAccountETMdpConfirmer"/>
 
     </RelativeLayout>
 

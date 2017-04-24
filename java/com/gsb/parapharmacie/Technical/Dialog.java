@@ -19,10 +19,10 @@ public abstract class Dialog {
                 .show();
     }
 
-    public static void custom(Context context, String string){
+    public static void custom(Context context, String title, String message){
         new AlertDialog.Builder(context)
-                .setTitle("Custom")
-                .setMessage(string)
+                .setTitle(title)
+                .setMessage(message)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

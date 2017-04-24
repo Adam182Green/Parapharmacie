@@ -2,14 +2,25 @@ package com.gsb.parapharmacie;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.gsb.parapharmacie.Application.Parapharmacie;
+import com.gsb.parapharmacie.Models.Client;
+import com.gsb.parapharmacie.Models.Ville;
+import com.gsb.parapharmacie.Technical.ClientService;
 import com.gsb.parapharmacie.Technical.Dialog;
+import com.gsb.parapharmacie.Technical.VilleService;
+import com.gsb.parapharmacie.Technical.WebService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailET;
     private EditText mdpET;
     private Context context = this;
+    private String email;
+    private String password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +47,9 @@ public class LoginActivity extends AppCompatActivity {
                     Dialog.formInvalide(context);
                 else
                 {
-
+                    email = emailET.getText().toString();
+                    password = mdpET.getText().toString();
+                    verifyIfClientExists();
                 }
             }
         });
@@ -48,6 +64,31 @@ public class LoginActivity extends AppCompatActivity {
 
     private Boolean formIsValid(){
         return !emailET.getText().toString().equals("") && !mdpET.getText().toString().equals("");
+    }
+
+    private void verifyIfClientExists() {
+        AsyncTask<Void, Void, Client> execute = new AsyncTask<Void, Void, Client>() {
+            @Override
+            protected Client doInBackground(Void... params) {
+                try {
+                    return ClientService.verifyIfClientExists(email, password);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Client result) {
+                if(result == null)
+                    Dialog.custom(context, "Erreur", "Vous avez saisi un email ou un mot de passe incorrect.");
+                else {
+                    ((Parapharmacie) getApplication()).setCurrentUser(result);
+                    //TODO go to home
+                }
+                WebService.disconnect();
+            }
+        }.execute();
     }
 
     private void setViews(){

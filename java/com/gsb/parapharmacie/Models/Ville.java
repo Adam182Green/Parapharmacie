@@ -3,7 +3,7 @@ package com.gsb.parapharmacie.Models;
 public class Ville {
     private int id;
     private String numDepartement;
-    //private Departement departement;
+    private Departement departement;
     private String nom;
     private String codePostal;
 
@@ -21,12 +21,12 @@ public class Ville {
         this.numDepartement = numDepartement;
     }
 
-//    public Departement getDepartement() {
-//        return departement;
-//    }
-//    public void setDepartement(Departement departement) {
-//        this.departement = departement;
-//    }
+    public Departement getDepartement() {
+        return departement;
+    }
+    public void setDepartement(Departement departement) {
+        this.departement = departement;
+    }
 
     public String getNom() {
         return nom;
@@ -42,6 +42,7 @@ public class Ville {
         this.codePostal = codePostal;
     }
 
+    @Override
     public String toString(){
         return nom;
     }

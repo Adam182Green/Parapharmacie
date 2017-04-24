@@ -7,7 +7,7 @@ public class Client {
     private int id;
     private String nom;
     private String prenom;
-    private Date dateNaissance;
+    private String dateNaissance;
     private String email;
     private String motDePasse;
     private String telephone;
@@ -40,10 +40,10 @@ public class Client {
         this.prenom = prenom;
     }
 
-    public Date getDateNaissance() {
+    public String getDateNaissance() {
         return dateNaissance;
     }
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
@@ -111,7 +111,7 @@ public class Client {
     }
 
 
-    public Client(String nom, String prenom, Date dateNaissance, String email, String motDePasse, String telephone, String adresse, int idVille, Ville ville, String numSS, Boolean valide, List<CommandeClient> commandeClients) {
+    public Client(String nom, String prenom, String dateNaissance, String email, String motDePasse, String telephone, String adresse, int idVille, String numSS) {
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
@@ -120,10 +120,7 @@ public class Client {
         this.telephone = telephone;
         this.adresse = adresse;
         this.idVille = idVille;
-        this.ville = ville;
         this.numSS = numSS;
-        this.valide = valide;
-        this.commandeClients = commandeClients;
     }
 
 }

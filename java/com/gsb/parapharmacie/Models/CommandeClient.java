@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CommandeClient {
     private int id;
-    private Date dateCreation;
+    private String dateCreation;
     private int idClient;
     private Client client;
     private int idPharmacie;
@@ -20,10 +20,10 @@ public class CommandeClient {
         this.id = id;
     }
 
-    public Date getDateCreation() {
+    public String getDateCreation() {
         return dateCreation;
     }
-    public void setDateCreation(Date dateCreation) {
+    public void setDateCreation(String dateCreation) {
         this.dateCreation = dateCreation;
     }
 
@@ -63,7 +63,7 @@ public class CommandeClient {
     }
 
 
-    public CommandeClient(Date dateCreation, int idClient, Client client, int idPharmacie, Pharmacie pharmacie, List<ProduitCommandeClient> produitCommandeClients) {
+    public CommandeClient(String dateCreation, int idClient, Client client, int idPharmacie, Pharmacie pharmacie, List<ProduitCommandeClient> produitCommandeClients) {
         this.dateCreation = dateCreation;
         this.idClient = idClient;
         this.client = client;

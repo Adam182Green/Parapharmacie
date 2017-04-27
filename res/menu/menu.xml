@@ -18,4 +18,9 @@
         android:id="@+id/menuItemCommandes"
         android:orderInCategory="4"
         android:title="Mes commandes"/>
+
+    <item
+        android:id="@+id/menuItemProduits"
+        android:orderInCategory="5"
+        android:title="Les produits"/>
 </menu>

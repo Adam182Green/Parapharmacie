@@ -1,5 +1,6 @@
 package com.gsb.parapharmacie;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -39,6 +40,9 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             case R.id.menuItemCommandes:
                 Toast.makeText(getApplicationContext(), "Mes Commandes", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.menuItemProduits:
+                startActivity(new Intent(HomeActivity.this, ListeProduitsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

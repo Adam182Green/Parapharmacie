@@ -9,35 +9,62 @@
         android:layout_centerVertical="true">
 
         <EditText
-            android:id="@+id/newAccountETFirstName"
+            android:id="@+id/newAccountETPrenom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Prénom"
             android:layout_toLeftOf="@+id/newAccountETEmail"
             android:layout_toStartOf="@+id/newAccountETEmail" />
         <EditText
-            android:id="@+id/newAccountETLastName"
+            android:id="@+id/newAccountETNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Nom"
             android:layout_toRightOf="@+id/newAccountETEmail"
             android:layout_toEndOf="@id/newAccountETEmail"/>
 
+        <DatePicker
+            android:id="@+id/newAccountDPDateNaissance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_marginTop="-30dp"
+            android:layout_marginBottom="-30dp"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETNom"/>
+
         <EditText
-            android:id="@+id/newAccountETAddress"
+            android:id="@+id/newAccountETAdresse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Adresse"
-            android:layout_toLeftOf="@+id/newAccountETEmail"
-            android:layout_toStartOf="@+id/newAccountETEmail"
-            android:layout_below="@id/newAccountETFirstName"/>
-        <Spinner
-            android:id="@+id/newAccoutETTown"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountDPDateNaissance"/>
+
+        <EditText
+            android:id="@+id/newAccountETCodePostal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/newAccountETEmail"
-            android:layout_toEndOf="@id/newAccountETEmail"
-            android:layout_below="@id/newAccountETFirstName"/>
+            android:hint="Code postal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETAdresse"/>
+        <Button
+            android:id="@+id/newAccountBRechercherVille"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Rechercher villes"
+            android:layout_toRightOf="@+id/newAccountETCodePostal"
+            android:layout_below="@id/newAccountETAdresse"/>
+
+        <Spinner
+            android:id="@+id/newAccountSVilles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETCodePostal"/>
 
         <EditText
             android:id="@+id/newAccountETTelephone"
@@ -46,7 +73,16 @@
             android:inputType="phone"
             android:hint="Téléphone"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETAddress"/>
+            android:layout_below="@id/newAccountSVilles"/>
+
+        <EditText
+            android:id="@+id/newAccountETNumSS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Numéro de sécurité sociale"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETTelephone"/>
+
         <EditText
             android:id="@+id/newAccountETEmail"
             android:layout_width="wrap_content"
@@ -54,40 +90,44 @@
             android:inputType="textEmailAddress"
             android:hint="Email"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETTelephone"/>
+            android:layout_below="@id/newAccountETNumSS"/>
+
         <EditText
-            android:id="@+id/newAccountETPassword"
+            android:id="@+id/newAccountETMdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Mot de passe"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/newAccountETEmail"/>
+
         <EditText
-            android:id="@+id/newAccountETPasswordConfirm"
+            android:id="@+id/newAccountETMdpConfirmer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Confirmez mot de passe"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETPassword"/>
+            android:layout_below="@id/newAccountETMdp"/>
+
         <Button
-            android:id="@+id/newAccountBNewaccount"
+            android:id="@+id/newAccountBNouvCompte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Créer"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/newAccountETPasswordConfirm"/>
+            android:layout_below="@id/newAccountETMdpConfirmer"/>
 
+        <TextView
+            android:id="@+id/newAccountTVGoToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vous avez déjà un compte ? Connectez vous"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountBNouvCompte"
+            android:clickable="true"/>
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/newAccountTVGoToLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vous avez déjà un compte ? Connectez vous"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:clickable="true"/>
+
 
 </RelativeLayout>

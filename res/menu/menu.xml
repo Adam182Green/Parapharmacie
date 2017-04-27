@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/menuActionCommande"
-        app:showAsAction="ifRoom"
+        android:orderInCategory="1"
         android:title="Commande" />
     <item
         android:id="@+id/menuActionPharmacie"
-        app:showAsAction="ifRoom"
+        android:orderInCategory="2"
         android:title="Pharmacies" />
 
     <item
         android:id="@+id/menuItemProfil"
-        android:orderInCategory="1"
+        android:orderInCategory="3"
         android:title="Mon profil" />
     <item
         android:id="@+id/menuItemCommandes"
-        android:orderInCategory="2"
+        android:orderInCategory="4"
         android:title="Mes commandes"/>
 </menu>

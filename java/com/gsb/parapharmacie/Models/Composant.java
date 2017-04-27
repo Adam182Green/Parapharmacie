@@ -1,5 +1,8 @@
 package com.gsb.parapharmacie.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class Composant {
     private int id;
     private String libelle;
@@ -16,5 +19,10 @@ public class Composant {
     }
     public void setLibelle(String libelle) {
         this.libelle = libelle;
+    }
+
+    @Override
+    public String toString(){
+        return libelle;
     }
 }

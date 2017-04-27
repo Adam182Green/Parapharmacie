@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewAccountActivity" />
-        <activity android:name=".ProfilActivity"/>
         <activity android:name=".HomeActivity"/>
+        <activity android:name=".NewAccountActivity" />
+        <activity android:name=".NewCommandeActivity"/>
+        <activity android:name=".ProduitActivity"/>
+        <activity android:name=".ProfilActivity"/>
     </application>
 
 </manifest>

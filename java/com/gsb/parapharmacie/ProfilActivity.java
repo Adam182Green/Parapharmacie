@@ -35,7 +35,6 @@ public class ProfilActivity  extends AppCompatActivity {
     private DatePicker dateNaissanceDP;
     private EditText adresseET;
     private EditText codePostalET;
-    private Button rechercherVillesB;
     private Spinner villesS;
     private EditText telephoneET;
     private EditText numSSET;
@@ -43,9 +42,7 @@ public class ProfilActivity  extends AppCompatActivity {
     private EditText mdpET;
     private EditText mdpConfirmET;
     private Button modifierB;
-    private TextView goToLoginTV;
-    private Context context = this;
-
+  
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,7 +144,6 @@ public class ProfilActivity  extends AppCompatActivity {
         dateNaissanceDP = (DatePicker) findViewById(R.id.profilDPDateNaissance);
         adresseET = (EditText) findViewById(R.id.profilETAdresse);
         codePostalET = (EditText) findViewById(R.id.profilETCodePostal);
-        rechercherVillesB = (Button) findViewById(R.id.profilBRechercherVille);
         villesS = (Spinner) findViewById(R.id.profilSVilles);
         telephoneET = (EditText) findViewById(R.id.profilETTelephone);
         numSSET = (EditText) findViewById(R.id.profilETNumSS);

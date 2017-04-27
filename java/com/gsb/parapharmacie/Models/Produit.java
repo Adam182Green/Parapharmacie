@@ -60,4 +60,9 @@ public class Produit implements Parcelable {
         dest.writeList(this.composes);
         dest.writeList(this.composants);
     }
+
+    @Override
+    public String toString(){
+        return libelle;
+    }
 }

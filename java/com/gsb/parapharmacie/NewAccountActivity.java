@@ -59,6 +59,7 @@ public class NewAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO Vérifier que le code postal saisi soit valide
+                //TODO Modifier onClick => onChange, exécuter task si codePostal contient 5 caractères
                 GetVillesByCodePostalTask task = new GetVillesByCodePostalTask();
                 task.execute(codePostalET.getText().toString());
             }

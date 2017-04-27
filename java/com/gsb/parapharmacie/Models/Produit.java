@@ -1,8 +1,11 @@
 package com.gsb.parapharmacie.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
-public class Produit {
+public class Produit implements Parcelable {
     private int id;
     private String libelle;
     private float prix;
@@ -42,5 +45,24 @@ public class Produit {
     }
     public void setComposants(List<Composant> composants) {
         this.composants = composants;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.libelle);
+        dest.writeFloat(this.prix);
+        dest.writeList(this.composes);
+        dest.writeList(this.composants);
+    }
+
+    @Override
+    public String toString(){
+        return libelle;
     }
 }

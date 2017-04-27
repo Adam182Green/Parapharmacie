@@ -41,4 +41,10 @@ public class ProduitCommandeClient {
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
+
+
+    public ProduitCommandeClient(Produit produit, int quantite) {
+        this.produit = produit;
+        this.quantite = quantite;
+    }
 }

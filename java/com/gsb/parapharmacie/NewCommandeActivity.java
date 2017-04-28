@@ -31,8 +31,8 @@ public class NewCommandeActivity extends AppCompatActivity {
         setViews();
 
         List<ProduitCommandeClient> panier = ((Parapharmacie)getApplication()).getPanier();
-        if(panier != null) {
-            ArrayAdapter<ProduitCommandeClient> adapter = new PanierAdapter(this, panier);
+        if(panier.size() > 0) {
+            PanierAdapter adapter = new PanierAdapter(this, panier);
             panierLV.setAdapter(adapter);
         }
 

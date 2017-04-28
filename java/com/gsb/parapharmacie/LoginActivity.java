@@ -80,6 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                     Dialog.custom(context, "Succes", "Vous avez saisi un email et un mot de passe correct.");
                     ((Parapharmacie) getApplication()).setCurrentUser(result);
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    finishAffinity();
+
                 }
                 WebService.disconnect();
             }

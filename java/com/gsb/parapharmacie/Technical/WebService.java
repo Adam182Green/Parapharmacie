@@ -54,7 +54,7 @@ public abstract class WebService {
         return httpConn;
     }
 
-    public static String readSingleLineRespone() throws IOException {
+    public static String readSingleLineResponse() throws IOException {
         InputStream inputStream = null;
         if (httpConn != null) {
             inputStream = httpConn.getInputStream();
@@ -70,7 +70,7 @@ public abstract class WebService {
         return response;
     }
 
-    public static String[] readMultipleLinesRespone() throws IOException {
+    public static String[] readMultipleLinesResponse() throws IOException {
         InputStream inputStream = null;
         if (httpConn != null) {
             inputStream = httpConn.getInputStream();

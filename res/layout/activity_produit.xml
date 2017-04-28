@@ -6,10 +6,19 @@
         android:id="@+id/produitTVLibelleProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    
+    <Button
+        android:id="@+id/produitBAjouterAuPanier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/produitTVLibelleProduit"
+        android:layout_toEndOf="@id/produitTVLibelleProduit"
+        android:hint="Ajouter au panier"/>
 
     <ListView
         android:id="@+id/produitLVComposants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/produitTVLibelleProduit"/>
 
 </RelativeLayout>

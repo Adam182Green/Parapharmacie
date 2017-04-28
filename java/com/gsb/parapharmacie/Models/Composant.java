@@ -3,7 +3,10 @@ package com.gsb.parapharmacie.Models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Composant {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Composant implements Parcelable {
     private int id;
     private String libelle;
 
@@ -24,5 +27,31 @@ public class Composant {
     @Override
     public String toString(){
         return libelle;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(libelle);
+    }
+
+    public static final Parcelable.Creator<Composant> CREATOR = new Parcelable.Creator<Composant>() {
+        public Composant createFromParcel(Parcel in) {
+            return new Composant(in);
+        }
+
+        public Composant[] newArray(int size) {
+            return new Composant[size];
+        }
+    };
+
+    private Composant(Parcel in) {
+        this.id = in.readInt();
+        this.libelle = in.readString();
     }
 }

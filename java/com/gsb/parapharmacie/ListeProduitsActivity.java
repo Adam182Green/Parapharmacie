@@ -44,14 +44,15 @@ public class ListeProduitsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<Produit> result){
             if(result != null){
-                ArrayAdapter<Produit> adapter = new ArrayAdapter<Produit>(getApplicationContext(), android.R.layout.simple_list_item_1);
+                ArrayAdapter<Produit> adapter = new ArrayAdapter<Produit>(getApplicationContext(), android.R.layout.simple_list_item_1,
+                        result);
                 produitsLV.setAdapter(adapter);
                 produitsLV.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Produit produit = (Produit) produitsLV.getItemAtPosition(position);
                         Intent intent = new Intent(ListeProduitsActivity.this, ProduitActivity.class);
-                        intent.putExtra("produit",produit);
+                        intent.putExtra("produit", produit);
                         startActivity(intent);
                     }
                 });

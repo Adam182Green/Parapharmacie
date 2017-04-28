@@ -6,21 +6,15 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.gsb.parapharmacie.Application.Parapharmacie;
 import com.gsb.parapharmacie.Models.Client;
-import com.gsb.parapharmacie.Models.Ville;
 import com.gsb.parapharmacie.Technical.ClientService;
 import com.gsb.parapharmacie.Technical.Dialog;
-import com.gsb.parapharmacie.Technical.VilleService;
 import com.gsb.parapharmacie.Technical.WebService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -83,8 +77,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(result == null)
                     Dialog.custom(context, "Erreur", "Vous avez saisi un email ou un mot de passe incorrect.");
                 else {
+                    Dialog.custom(context, "Succes", "Vous avez saisi un email et un mot de passe correct.");
                     ((Parapharmacie) getApplication()).setCurrentUser(result);
-                    //TODO go to home
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    finishAffinity();
                 }
                 WebService.disconnect();
             }

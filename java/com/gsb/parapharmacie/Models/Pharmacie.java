@@ -7,6 +7,7 @@ public class Pharmacie {
     private String libelle;
     private String adresse;
     private int idVille;
+    private Ville ville;
     private String telephone;
     private List<StockPharmacie> stockPharmacies;
 
@@ -36,6 +37,13 @@ public class Pharmacie {
     }
     public void setIdVille(int idVille) {
         this.idVille = idVille;
+    }
+
+    public Ville getVille() {
+        return ville;
+    }
+    public void setVille(Ville ville) {
+        this.ville = ville;
     }
 
     public String getTelephone() {

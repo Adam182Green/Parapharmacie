@@ -81,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                     ((Parapharmacie) getApplication()).setCurrentUser(result);
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     finishAffinity();
-
                 }
                 WebService.disconnect();
             }

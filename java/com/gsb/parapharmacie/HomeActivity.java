@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gsb.parapharmacie.Application.Parapharmacie;
-
+import com.gsb.parapharmacie.Models.Client;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((Parapharmacie)getApplication()).setCurrentUser(new Client("nom", "prenom", "2016-08-14", "email","password","telephone","adresse",1,"020202"));
         if(((Parapharmacie)getApplication()).getCurrentUser() == null){
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             this.finish();
@@ -37,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menuActionCommande:
-                startActivity(new Intent(HomeActivity.this, NewCommandeActivity.class));
+                startActivity(new Intent(HomeActivity.this, NewCommandeActivity1.class));
                 return true;
             case R.id.menuActionPharmacie:
                 Toast.makeText(getApplicationContext(), "Pharmacie", Toast.LENGTH_LONG).show();

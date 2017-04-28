@@ -33,8 +33,6 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
 
         if (pCC != null) {
             libelleProduitTV.setText(pCC.getProduit().getLibelle());
-        }
-        if (pCC != null) {
             quantiteTV.setText("Quantité : " + String.valueOf(pCC.getQuantite()));
         }
 

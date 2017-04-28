@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import com.gsb.parapharmacie.Application.Parapharmacie;
 import com.gsb.parapharmacie.Models.Produit;
-import com.gsb.parapharmacie.Technical.Dialog;
 
 public class AjouterAuPanierActivity extends AppCompatActivity {
 
     private Produit produit;
     private TextView quantiteTV;
     private NumberPicker quantiteNP;
+    private TextView prixTotalTV;
     private Button confirmerAjoutAuPanierB;
     private Button annulerAjoutAuPanierB;
 
@@ -33,13 +33,19 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
 
         if (((Parapharmacie) getApplication()).productAlreadyInPanier(produit)) {
             quantiteTV.setText("Ce produit est déjà dans votre panier. Modifiez sa quantité :");
+            confirmerAjoutAuPanierB.setHint("Modifier");
             int  i = ((Parapharmacie) getApplication()).getQuantiteInPanier(produit);
             quantiteNP.setValue(i);
         }
         else
             quantiteTV.setText("Quantité à ajouter à votre panier :");
 
-
+        quantiteNP.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                prixTotalTV.setText("Prix total: " + String.valueOf(produit.getPrix() * newVal) + "€");
+            }
+        });
 
         confirmerAjoutAuPanierB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +66,8 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
     private void setViews() {
         quantiteTV = (TextView) findViewById(R.id.ajouterAuPanierTVQuantite);
         quantiteNP = (NumberPicker) findViewById(R.id.ajouterAuPanierNPQuantite);
+        prixTotalTV = (TextView) findViewById(R.id.panierTVPrixTotal);
         confirmerAjoutAuPanierB = (Button) findViewById(R.id.ajouterAuPanierBAjouter);
         annulerAjoutAuPanierB = (Button) findViewById(R.id.ajouterAuPanierBAnnuler);
-
     }
 }

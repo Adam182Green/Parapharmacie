@@ -1,31 +1,25 @@
 package com.gsb.parapharmacie.Technical;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.gsb.parapharmacie.Models.Departement;
+import com.gsb.parapharmacie.Models.Produit;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 public abstract class DepartementService {
 
-    private final String getDepartementUrl = "http://poujat-thibault.fr/android_login_api/test.php";
+    private final static String getDepartementsUrl = "http://poujat-thibault.fr/api/departement/get_all.php";
 
-    public Departement getDepartement() throws Exception {
-        InputStream is = null;
+    public static List<Departement> getDepartements() throws Exception {
         try {
-            HttpURLConnection conn = WebService.get(getDepartementUrl);
-            if (conn != null) {
-                is = conn.getInputStream();
-            }
-            if(is != null)
-                return new Gson().fromJson(new InputStreamReader(is), Departement.class);
-        } finally {
-            if (is != null) {
-                is.close();
-            }
-        }
+            HttpURLConnection conn = WebService.get(getDepartementsUrl);
+            return new Gson().fromJson(new InputStreamReader(conn.getInputStream()), new TypeToken<List<Departement>>(){}.getType());
+        } catch (Exception ignored){ }
         return null;
     }
 }

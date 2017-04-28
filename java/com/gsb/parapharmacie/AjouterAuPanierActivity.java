@@ -62,5 +62,6 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
         quantiteNP = (NumberPicker) findViewById(R.id.ajouterAuPanierNPQuantite);
         confirmerAjoutAuPanierB = (Button) findViewById(R.id.ajouterAuPanierBAjouter);
         annulerAjoutAuPanierB = (Button) findViewById(R.id.ajouterAuPanierBAnnuler);
+
     }
 }

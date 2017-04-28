@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.gsb.parapharmacie.Application.Parapharmacie;
 
 
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override

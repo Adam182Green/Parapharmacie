@@ -44,6 +44,7 @@ public class ProduitActivity extends AppCompatActivity {
                 Intent intent = new Intent(ProduitActivity.this, AjouterAuPanierActivity.class);
                 intent.putExtra("produit", produit);
                 startActivity(intent);
+
             }
         });
     }

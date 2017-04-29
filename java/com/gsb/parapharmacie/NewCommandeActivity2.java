@@ -19,6 +19,7 @@ import com.gsb.parapharmacie.Adapters.VilleAdapter;
 import com.gsb.parapharmacie.Models.Departement;
 import com.gsb.parapharmacie.Models.Ville;
 import com.gsb.parapharmacie.Technical.DepartementService;
+import com.gsb.parapharmacie.Technical.Dialog;
 import com.gsb.parapharmacie.Technical.VilleService;
 import com.gsb.parapharmacie.Technical.WebService;
 

@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-/**
- * Created by Adam on 28/04/2017.
- */
+import com.gsb.parapharmacie.Models.Pharmacie;
 
 public class NewCommandeActivity4 extends AppCompatActivity {
 
     private Button creerB4;
+    private Pharmacie pharmacieChosie;
     // TODO Ajouter les autres
 
     @Override
@@ -19,6 +18,8 @@ public class NewCommandeActivity4 extends AppCompatActivity {
         setContentView(R.layout.activity_newcommande1panier);
 
         setViews();
+
+        pharmacieChosie = getIntent().getParcelableExtra("pharmacieChoisie");
     }
 
     private void setViews(){

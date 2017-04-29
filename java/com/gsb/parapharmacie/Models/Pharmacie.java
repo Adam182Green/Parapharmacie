@@ -1,8 +1,12 @@
 package com.gsb.parapharmacie.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Pharmacie {
+public class Pharmacie implements Parcelable {
     private int id;
     private String libelle;
     private String adresse;
@@ -58,5 +62,37 @@ public class Pharmacie {
     }
     public void setStockPharmacies(List<StockPharmacie> stockPharmacies) {
         this.stockPharmacies = stockPharmacies;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.libelle);
+        dest.writeString(this.adresse);
+        dest.writeParcelable(this.ville, flags);
+        dest.writeString(this.telephone);
+    }
+
+    public static final Parcelable.Creator<Pharmacie> CREATOR = new Parcelable.Creator<Pharmacie>() {
+        public Pharmacie createFromParcel(Parcel in) {
+            return new Pharmacie(in);
+        }
+
+        public Pharmacie[] newArray(int size) {
+            return new Pharmacie[size];
+        }
+    };
+
+    private Pharmacie(Parcel in) {
+        this.id = in.readInt();
+        this.libelle = in.readString();
+        this.adresse = in.readString();
+        this.ville = in.readParcelable(Ville.class.getClassLoader());
+        this.telephone = in.readString();
     }
 }

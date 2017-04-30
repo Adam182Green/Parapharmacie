@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <EditText
+            android:id="@+id/profilETPrenom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Prénom"
+            android:layout_toLeftOf="@+id/profilETEmail"
+            android:layout_toStartOf="@+id/profilETEmail" />
+        <EditText
+            android:id="@+id/profilETNom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:layout_toRightOf="@+id/profilETEmail"
+            android:layout_toEndOf="@id/profilETEmail"/>
+
+        <DatePicker
+            android:id="@+id/profilDPDateNaissance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_marginTop="-30dp"
+            android:layout_marginBottom="-30dp"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETNom"/>
+
+        <EditText
+            android:id="@+id/profilETAdresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Adresse"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilDPDateNaissance"/>
+
+        <EditText
+            android:id="@+id/profilETCodePostal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Code postal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETAdresse"/>
+        <Button
+            android:id="@+id/profilBRechercherVille"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Rechercher villes"
+            android:layout_toRightOf="@+id/profilETCodePostal"
+            android:layout_below="@id/profilETAdresse"/>
+
+        <Spinner
+            android:id="@+id/profilSVilles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETCodePostal"/>
+
+        <EditText
+            android:id="@+id/profilETTelephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Téléphone"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilSVilles"/>
+
+        <EditText
+            android:id="@+id/profilETNumSS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Numéro de sécurité sociale"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETTelephone"/>
+
+        <EditText
+            android:id="@+id/profilETEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETNumSS"/>
+
+        <EditText
+            android:id="@+id/profilETMdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Mot de passe"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETEmail"/>
+
+        <EditText
+            android:id="@+id/profilETMdpConfirmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Confirmez mot de passe"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETMdp"/>
+
+        <Button
+            android:id="@+id/profilBModifier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/profilETMdpConfirmer"/>
+    </RelativeLayout>
+
+</RelativeLayout>

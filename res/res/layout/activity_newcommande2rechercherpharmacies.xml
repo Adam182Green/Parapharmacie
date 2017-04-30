@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/newCommande2ETRechercherPharmacieParLibelle"
+        android:hint="Rechercher pharmacie par nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/newCommande2TVRechercherParVille"
+        android:text="Rechercher par ville:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/newCommande2ETRechercherPharmacieParLibelle"/>
+
+    <EditText
+        android:id="@+id/newCommande2ETRechercherVilleParCodePostal"
+        android:hint="Rechercher ville par code postal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande2TVRechercherParVille"/>
+
+    <TextView
+        android:id="@+id/newCommande2TVRechercherVilleParDepartement"
+        android:hint="Rechercher ville par département:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande2ETRechercherVilleParCodePostal"/>
+
+    <Spinner
+        android:id="@+id/newCommande2SDepartements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/newCommande2TVRechercherVilleParDepartement"
+        android:layout_toEndOf="@id/newCommande2TVRechercherVilleParDepartement"
+        android:layout_below="@id/newCommande2ETRechercherVilleParCodePostal"/>
+
+    <TextView
+        android:id="@+id/newCommande2TVResultatsVillesParDepartement"
+        android:text="Résultats des villes:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande2SDepartements"/>
+
+    <Spinner
+        android:id="@+id/newCommande2SVilles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande2SDepartements"
+        android:layout_toRightOf="@id/newCommande2TVResultatsVillesParDepartement"
+        android:layout_toEndOf="@id/newCommande2TVResultatsVillesParDepartement"/>
+
+    <Button
+        android:id="@+id/newCommande2BAjouterVille"
+        android:hint="Ajouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande2SDepartements"
+        android:layout_toRightOf="@id/newCommande2SVilles"
+        android:layout_toEndOf="@id/newCommande2SVilles"/>
+
+    <TextView
+        android:id="@+id/newCOmmande2TVVillesChoisies"
+        android:text="Liste des villes choisies:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande2BAjouterVille"/>
+
+    <ListView
+        android:id="@+id/newCommande2LVListeVillesChoisies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCOmmande2TVVillesChoisies"/>
+
+    <Button
+        android:id="@+id/newCommande2BRechercher"
+        android:hint="Rechercher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/newCommande2LVListeVillesChoisies"/>
+
+</RelativeLayout>

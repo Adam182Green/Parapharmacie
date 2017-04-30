@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuItemPanier"
+        android:orderInCategory="1"
+        android:title="Mon Panier" />
+    <item
+        android:id="@+id/menuItemProfil"
+        android:orderInCategory="2"
+        android:title="Mon profil" />
+    <item
+        android:id="@+id/menuItemLogout"
+        android:orderInCategory="3"
+        android:title="Déconnexion"/>
+</menu>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gsb.parapharmacie">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+
+    <application
+        android:name=".Application.Parapharmacie"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_panier"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AjouterAuPanierActivity"/>
+        <activity android:name=".ListeProduitsActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".NewAccountActivity" />
+        <activity android:name=".NewCommandeActivity1"/>
+        <activity android:name=".NewCommandeActivity2"/>
+        <activity android:name=".NewCommandeActivity3"/>
+        <activity android:name=".NewCommandeActivity4"/>
+        <activity android:name=".PanierActivity"/>
+        <activity android:name=".ProduitActivity"/>
+        <activity android:name=".ProfilActivity"/>
+    </application>
+</manifest>

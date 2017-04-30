@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.gsb.parapharmacie.Application.Parapharmacie;
 import com.gsb.parapharmacie.Models.Produit;
+import com.gsb.parapharmacie.Technical.Utility;
 
 public class AjouterAuPanierActivity extends AppCompatActivity {
 
@@ -43,7 +44,7 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
         quantiteNP.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                prixTotalTV.setText("Prix total: " + String.valueOf(produit.getPrix() * newVal) + "€");
+                prixTotalTV.setText("Prix total: " + Utility.roundPrice(produit.getPrix() * newVal) + "€");
             }
         });
 
@@ -66,7 +67,7 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
     private void setViews() {
         quantiteTV = (TextView) findViewById(R.id.ajouterAuPanierTVQuantite);
         quantiteNP = (NumberPicker) findViewById(R.id.ajouterAuPanierNPQuantite);
-        prixTotalTV = (TextView) findViewById(R.id.panierTVPrixTotal);
+        prixTotalTV = (TextView) findViewById(R.id.ajouterAuPanierTVPrixTotal);
         confirmerAjoutAuPanierB = (Button) findViewById(R.id.ajouterAuPanierBAjouter);
         annulerAjoutAuPanierB = (Button) findViewById(R.id.ajouterAuPanierBAnnuler);
     }

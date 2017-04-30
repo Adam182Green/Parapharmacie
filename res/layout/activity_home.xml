@@ -4,15 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gsb.parapharmacie.HomeActivity">
+    tools:context="com.gsb.parapharmacie.HomeActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <TextView
-        android:id="@+id/texte"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/intro"
-        android:textColor="#C4C4C4"
-        android:textSize="50px" />
+    <ImageButton
+        android:id="@+id/panierIB"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:adjustViewBounds="false"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:contentDescription="Panier"
+        android:elevation="12dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toTopOf="@+id/commandeIB"
+        app:layout_constraintLeft_toLeftOf="@+id/commandeIB"
+        app:srcCompat="@drawable/panier"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <ImageButton
+        android:id="@+id/commandeIB"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:adjustViewBounds="false"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:contentDescription="Commande"
+        android:cropToPadding="false"
+        android:elevation="12dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toTopOf="@+id/produitIB"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/produitIB"
+        app:layout_constraintRight_toRightOf="@+id/produitIB"
+        app:srcCompat="@drawable/commande"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <ImageButton
+        android:id="@+id/produitIB"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:contentDescription="Produits"
+        android:elevation="12dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/produits"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <ImageView
+        android:id="@+id/logoIV"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:contentDescription="Logo GSB"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/logo_gsb"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteY="-19dp" />
 
 </android.support.constraint.ConstraintLayout>

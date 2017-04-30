@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <!--TODO Détails de la commande en bref => panier + prix total / pharmacie + adresse-->
+    <!--Sorte de ticket de caisse (?)-->
+
+    <Button
+        android:id="@+id/newCommande4BCreer"
+        android:hint="Créer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

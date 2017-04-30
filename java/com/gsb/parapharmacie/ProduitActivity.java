@@ -22,8 +22,9 @@ public class ProduitActivity extends AppCompatActivity {
 
     private Produit produit;
     private TextView libelleProduitTV;
-    private Button ajouterAuPanierB;
+    private TextView prixTV;
     private ListView composantsLV;
+    private Button ajouterAuPanierB;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class ProduitActivity extends AppCompatActivity {
         setViews();
 
         libelleProduitTV.setText(produit.getLibelle());
+        prixTV.setText(String.valueOf(produit.getPrix()) + "€");
 
         ArrayAdapter<Composant> adapter = new ArrayAdapter<Composant>(this, android.R.layout.simple_list_item_1, produit.getComposants());
         composantsLV.setAdapter(adapter);
@@ -44,14 +46,14 @@ public class ProduitActivity extends AppCompatActivity {
                 Intent intent = new Intent(ProduitActivity.this, AjouterAuPanierActivity.class);
                 intent.putExtra("produit", produit);
                 startActivity(intent);
-
             }
         });
     }
 
     private void setViews() {
         libelleProduitTV = (TextView) findViewById(R.id.produitTVLibelleProduit);
-        ajouterAuPanierB = (Button) findViewById(R.id.produitBAjouterAuPanier);
+        prixTV = (TextView) findViewById(R.id.produitTVPrixUnitaire);
         composantsLV = (ListView) findViewById(R.id.produitLVComposants);
+        ajouterAuPanierB = (Button) findViewById(R.id.produitBAjouterAuPanier);
     }
 }

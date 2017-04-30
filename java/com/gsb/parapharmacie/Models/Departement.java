@@ -2,7 +2,7 @@ package com.gsb.parapharmacie.Models;
 
 public class Departement {
     private String num;
-    private String nom;
+    private String libelle;
 
     public String getNum() {
         return num;
@@ -11,10 +11,15 @@ public class Departement {
         this.num = num;
     }
 
-    public String getNom() {
-        return nom;
+    public String getLibelle() {
+        return libelle;
     }
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    @Override
+    public String toString(){
+        return libelle + " (" + num + ")";
     }
 }

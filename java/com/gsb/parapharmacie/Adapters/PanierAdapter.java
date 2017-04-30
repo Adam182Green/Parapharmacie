@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.gsb.parapharmacie.Models.Produit;
 import com.gsb.parapharmacie.Models.ProduitCommandeClient;
 import com.gsb.parapharmacie.R;
+import com.gsb.parapharmacie.Technical.Utility;
 
 import java.util.List;
 
@@ -28,14 +30,17 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
                     false);
         }
 
-        TextView libelleProduitTV = (TextView) convertView.findViewById(R.id.panierTVLibelleProduit);
-        TextView quantiteTV = (TextView) convertView.findViewById(R.id.panierTVQuantite);
+        TextView libelleProduitTV = (TextView) convertView.findViewById(R.id.textview_panierTVLibelleProduit);
+        TextView quantiteTV = (TextView) convertView.findViewById(R.id.textview_panierTVQuantite);
+        TextView prixUnitaireTV = (TextView) convertView.findViewById(R.id.textview_panierPrixUnitaire);
+        TextView prixTotalTV = (TextView) convertView.findViewById(R.id.textview_panierTVPrixTotal);
 
         if (pCC != null) {
-            libelleProduitTV.setText(pCC.getProduit().getLibelle());
-        }
-        if (pCC != null) {
+            Produit produit = pCC.getProduit();
+            libelleProduitTV.setText(produit.getLibelle());
             quantiteTV.setText("Quantité : " + String.valueOf(pCC.getQuantite()));
+            prixUnitaireTV.setText("Prix /unité : " + String.valueOf(produit.getPrix()));
+            prixTotalTV.setText("Prix total : " + Utility.roundPrice(produit.getPrix() * pCC.getQuantite()));
         }
 
         return convertView;

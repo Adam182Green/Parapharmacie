@@ -5,30 +5,58 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.gsb.parapharmacie.Application.Parapharmacie;
-
+import com.gsb.parapharmacie.Models.Client;
 
 
 public class HomeActivity extends AppCompatActivity {
 
+    private ImageButton panierIB;
+    private ImageButton produitIB;
+    private ImageButton commandeIB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((Parapharmacie)getApplication()).setCurrentUser(new Client("nom", "prenom", "2016-08-14", "email","password","telephone","adresse",1,"020202"));
         if(((Parapharmacie)getApplication()).getCurrentUser() == null){
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             this.finish();
         }
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home);
+
+        setViews();
+
+        panierIB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, PanierActivity.class));
+            }
+        });
+
+        commandeIB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, NewCommandeActivity1.class));
+            }
+        });
+
+        produitIB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ListeProduitsActivity.class));
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        ((TextView) findViewById(R.id.texte)).setText("Menu");
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
@@ -36,23 +64,24 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menuActionCommande:
-                startActivity(new Intent(HomeActivity.this, NewCommandeActivity.class));
-                return true;
-            case R.id.menuActionPharmacie:
-                Toast.makeText(getApplicationContext(), "Pharmacie", Toast.LENGTH_LONG).show();
+            case R.id.menuItemPanier:
+                startActivity(new Intent(HomeActivity.this, PanierActivity.class));
                 return true;
             case R.id.menuItemProfil:
-                Toast.makeText(getApplicationContext(), "Mon Profil", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(HomeActivity.this, ProfilActivity.class));
                 return true;
-            case R.id.menuItemCommandes:
-                Toast.makeText(getApplicationContext(), "Mes Commandes", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.menuItemProduits:
-                startActivity(new Intent(HomeActivity.this, ListeProduitsActivity.class));
+            case R.id.menuItemLogout:
+                //Todo Déconnexion
+                Toast.makeText(getApplicationContext(), "Déconnexion", Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void setViews(){
+        panierIB = (ImageButton)findViewById(R.id.panierIB);
+        commandeIB = (ImageButton)findViewById(R.id.commandeIB);
+        produitIB = (ImageButton)findViewById(R.id.produitIB);
     }
 }

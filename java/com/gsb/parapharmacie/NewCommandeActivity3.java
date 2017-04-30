@@ -1,5 +1,6 @@
 package com.gsb.parapharmacie;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class NewCommandeActivity3 extends AppCompatActivity {
     private ListView pharmaciesLV3;
     private Button suivantB3;
     private Pharmacie pharmacieChoisie = null;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +39,13 @@ public class NewCommandeActivity3 extends AppCompatActivity {
         filterParams.Libelle = getIntent().getStringExtra("libellePharmacie");
         filterParams.VillesChoisies = getIntent().getParcelableArrayListExtra("villesChoisies");
 
+        context = NewCommandeActivity3.this;
+
         suivantB3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (pharmacieChoisie == null) {
-                    Dialog.custom(getApplicationContext(), "Attention", "Veuillez sélectionner une pharmacie.");
+                    Dialog.custom(context, "Attention", "Veuillez sélectionner une pharmacie.");
                 } else {
                     Intent intent = new Intent(NewCommandeActivity3.this, NewCommandeActivity4.class);
                     intent.putExtra("pharmacieChoisie", pharmacieChoisie);

@@ -1,19 +1,17 @@
 package com.gsb.parapharmacie;
 
-import android.content.pm.PackageInstaller;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.gsb.parapharmacie.Adapters.PanierAdapter;
-import com.gsb.parapharmacie.Models.Client;
-import com.gsb.parapharmacie.Models.CommandeClient;
 import com.gsb.parapharmacie.Models.Produit;
 import com.gsb.parapharmacie.Models.ProduitCommandeClient;
-import com.gsb.parapharmacie.Technical.ClientService;
-import com.gsb.parapharmacie.Technical.ProduitCommandeClientService;
 import com.gsb.parapharmacie.Technical.ProduitService;
 
 import java.util.ArrayList;
@@ -49,10 +47,10 @@ public class PanierActivity extends AppCompatActivity {
             return null;
         }
 
-        //@Override
+        @Override
         protected void onPostExecute(List<Produit> result){
             if(result != null){
-                ArrayAdapter<Produit> adapter = new ArrayAdapter<Produit>(getApplicationContext(), android.R.layout.simple_list_item_1,
+                ArrayAdapter<Produit> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,
                         result);
                 monPanierLVPanier.setAdapter(adapter);
                 monPanierLVPanier.setOnItemClickListener(new AdapterView.OnItemClickListener(){

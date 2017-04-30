@@ -28,6 +28,7 @@
         <activity android:name=".NewCommandeActivity2"/>
         <activity android:name=".NewCommandeActivity3"/>
         <activity android:name=".NewCommandeActivity4"/>
+        <activity android:name=".PanierActivity"/>
         <activity android:name=".ProduitActivity"/>
         <activity android:name=".ProfilActivity"/>
     </application>

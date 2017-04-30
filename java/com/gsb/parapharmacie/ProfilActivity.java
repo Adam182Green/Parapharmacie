@@ -42,7 +42,7 @@ public class ProfilActivity  extends AppCompatActivity {
     private EditText mdpET;
     private EditText mdpConfirmET;
     private Button modifierB;
-  
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

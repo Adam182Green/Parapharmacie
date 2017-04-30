@@ -1,6 +1,9 @@
 package com.gsb.parapharmacie.Models;
 
-public class Ville {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Ville implements Parcelable {
     private int id;
     private String numDepartement;
     private Departement departement;
@@ -45,5 +48,35 @@ public class Ville {
     @Override
     public String toString(){
         return nom;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(numDepartement);
+        dest.writeString(nom);
+       dest.writeString(codePostal);
+    }
+
+    public static final Parcelable.Creator<Ville> CREATOR = new Parcelable.Creator<Ville>() {
+        public Ville createFromParcel(Parcel in) {
+            return new Ville(in);
+        }
+
+        public Ville[] newArray(int size) {
+            return new Ville[size];
+        }
+    };
+
+    public Ville(Parcel in){
+        this.id = in.readInt();
+        this.numDepartement = in.readString();
+        this.nom = in.readString();
+        this.codePostal = in.readString();
     }
 }

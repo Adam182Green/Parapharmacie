@@ -1,6 +1,7 @@
 package com.gsb.parapharmacie.Adapters;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,8 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
         super(context, 0, produitCommandeClients);
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         ProduitCommandeClient pCC = getItem(position);
 
         if (convertView ==  null) {
@@ -29,8 +31,10 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
         TextView libelleProduitTV = (TextView) convertView.findViewById(R.id.panierTVLibelleProduit);
         TextView quantiteTV = (TextView) convertView.findViewById(R.id.panierTVQuantite);
 
-        libelleProduitTV.setText(pCC.getProduit().getLibelle());
-        quantiteTV.setText(pCC.getQuantite());
+        if (pCC != null) {
+            libelleProduitTV.setText(pCC.getProduit().getLibelle());
+            quantiteTV.setText("Quantité : " + String.valueOf(pCC.getQuantite()));
+        }
 
         return convertView;
     }

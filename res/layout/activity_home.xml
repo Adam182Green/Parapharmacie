@@ -75,5 +75,5 @@
         app:srcCompat="@drawable/logo_gsb"
         tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteY="-19dp" />
-
+  
 </android.support.constraint.ConstraintLayout>

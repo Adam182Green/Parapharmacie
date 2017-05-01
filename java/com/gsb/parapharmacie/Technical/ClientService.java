@@ -11,7 +11,7 @@ import java.util.Map;
 
 public abstract class ClientService {
 
-    private final static String verifyIfClientExistsUrl = "http://poujat-thibault.fr/api/client/verifyIfClientExists.php";
+    private final static String verifyIfClientExistsUrl = "http://poujat-thibault.fr/api/client/verify_if_client_exists.php";
     private final static String createClientUrl = "http://poujat-thibault.fr/api/client/create.php";
     private final static String updateClientUrl = "http://poujat-thibault.fr/api/client/update.php";
 
@@ -46,9 +46,10 @@ public abstract class ClientService {
         return false;
     }
 
-    public static Boolean updateClient(Client client) throws Exception{
+    public static Boolean updateClient(Client client) throws Exception {
         try {
             Map<String, String> params = new LinkedHashMap<>();
+            params.put("id", String.valueOf(client.getId()));
             params.put("nom", client.getNom());
             params.put("prenom", client.getPrenom());
             params.put("dateNaissance", client.getDateNaissance());

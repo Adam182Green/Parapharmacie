@@ -7,36 +7,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true">
+
         <EditText
             android:id="@+id/loginETEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:layout_centerHorizontal="true"
             android:hint="Email"
-            android:layout_centerHorizontal="true"/>
+            android:inputType="textEmailAddress" />
+
         <EditText
             android:id="@+id/loginETMdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Mot de passe"
+            android:layout_below="@id/loginETEmail"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/loginETEmail"/>
+            android:hint="Mot de passe"
+            android:inputType="textPassword" />
+
         <Button
             android:id="@+id/loginBConnexion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Connexion"
+            android:layout_below="@id/loginETMdp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/loginETMdp"/>
+            android:text="Connexion" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/loginTVGoToNewAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vous n'avez pas de compte ? Inscrivez vous"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:clickable="true"/>
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:text="Vous n'avez pas de compte ? Inscrivez vous" />
 </RelativeLayout>

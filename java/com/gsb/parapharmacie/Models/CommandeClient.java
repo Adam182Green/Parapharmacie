@@ -63,12 +63,10 @@ public class CommandeClient {
     }
 
 
-    public CommandeClient(String dateCreation, int idClient, Client client, int idPharmacie, Pharmacie pharmacie, List<ProduitCommandeClient> produitCommandeClients) {
+    public CommandeClient(String dateCreation, int idClient, int idPharmacie, List<ProduitCommandeClient> produitCommandeClients) {
         this.dateCreation = dateCreation;
         this.idClient = idClient;
-        this.client = client;
         this.idPharmacie = idPharmacie;
-        this.pharmacie = pharmacie;
         this.produitCommandeClients = produitCommandeClients;
     }
 }

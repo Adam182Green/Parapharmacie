@@ -28,7 +28,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class ProfilActivity  extends AppCompatActivity {
+public class ProfilActivity extends AppCompatActivity {
 
     private EditText prenomET;
     private EditText nomET;
@@ -55,46 +55,28 @@ public class ProfilActivity  extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        modifierB.setOnClickListener(new View.OnClickListener(){
+        modifierB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 //TODO Véifier que le formulaire soit complet et valide
                 new EditClientTask().execute(new Client("edit", "edit", "2017-08-14", "edit", "edit", "80080808", "edit", 1, "edit"));
             }
         });
 
-        codePostalET.addTextChangedListener(new TextWatcher(){
+        codePostalET.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 String codePostal = codePostalET.getText().toString();
-                if(codePostal.length() == 5){
+                if (codePostal.length() == 5) {
                     new GetVillesByCodePostalTask().execute(codePostal);
                 }
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-        });
-    }
-
-    private class GetVilleByIdTask extends AsyncTask<String , Void, Ville>{
-
-        @Override
-        protected Ville doInBackground(String... params) {
-            try {
-                return VilleService.getVilleById(params[0]);
-            } catch (Exception e) {
-                e.printStackTrace();
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-            return null;
-        }
 
-        @Override
-        protected void onPostExecute(Ville result) {
-            if(result != null)
-                codePostalET.setText(result.getCodePostal());
-            WebService.disconnect();
-        }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+        });
     }
 
     private class GetVillesByCodePostalTask extends AsyncTask<String, Void, List<Ville>> {
@@ -110,14 +92,14 @@ public class ProfilActivity  extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Ville> result) {
-            ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, result);
+            ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(ProfilActivity.this, android.R.layout.simple_spinner_dropdown_item, result);
             villeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             villesS.setAdapter(villeArrayAdapter);
             WebService.disconnect();
         }
     }
 
-    private class EditClientTask extends AsyncTask<Client, Void, Boolean>{
+    private class EditClientTask extends AsyncTask<Client, Void, Boolean> {
         @Override
         protected Boolean doInBackground(Client... params) {
             try {
@@ -130,10 +112,10 @@ public class ProfilActivity  extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean result) {
-            if(result)
-                Dialog.custom(getApplicationContext(), "Succès", "Votre profil a été mis à jour.");
+            if (result)
+                Dialog.custom(ProfilActivity.this, "Succès", "Votre profil a été mis à jour.");
             else
-                Dialog.custom(getApplicationContext(), "Echec", "Il y a eu un erreur lors de la mise à jour de votre profil.");
+                Dialog.custom(ProfilActivity.this, "Echec", "Il y a eu un erreur lors de la mise à jour de votre profil.");
             WebService.disconnect();
         }
     }
@@ -150,18 +132,17 @@ public class ProfilActivity  extends AppCompatActivity {
         emailET = (EditText) findViewById(R.id.profilETEmail);
         mdpET = (EditText) findViewById(R.id.profilETMdp);
         mdpConfirmET = (EditText) findViewById(R.id.profilETMdpConfirmer);
-        modifierB = (Button)findViewById(R.id.profilBModifier);
+        modifierB = (Button) findViewById(R.id.profilBModifier);
     }
 
-    private void setProfil() throws Exception{
-        Client currentUser = ((Parapharmacie)getApplication()).getCurrentUser();
+    private void setProfil() throws Exception {
+        Client currentUser = ((Parapharmacie) getApplication()).getCurrentUser();
         prenomET.setText(currentUser.getPrenom());
         nomET.setText(currentUser.getNom());
         Calendar date = stringToCalendar(currentUser.getDateNaissance());
         dateNaissanceDP.updateDate(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH));
         adresseET.setText(currentUser.getAdresse());
-        GetVilleByIdTask task  = new GetVilleByIdTask();
-        task.execute(String.valueOf(currentUser.getIdVille()));
+        codePostalET.setText(currentUser.getVille().getCodePostal());
         telephoneET.setText(currentUser.getTelephone());
         numSSET.setText(currentUser.getNumSS());
         emailET.setText(currentUser.getEmail());

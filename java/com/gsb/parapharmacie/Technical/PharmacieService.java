@@ -19,24 +19,25 @@ public abstract class PharmacieService {
     private final static String getPharmaciesByLibelleUrl = "http://poujat-thibault.fr/api/pharmacie/get_pharmacies_by_libelle.php";
     private final static String getPharmaciesByVillesUrl = "http://poujat-thibault.fr/api/pharmacie/get_pharmacies_by_villes.php";
 
-    public static List<Pharmacie> getPharmaciesByLibelleAndVilles(String libelle, List<Integer> idVilles) throws Exception{
+    public static List<Pharmacie> getPharmaciesByLibelleAndVilles(String libelle, List<Integer> idVilles) throws Exception {
         try {
             Map<String, String> params = new LinkedHashMap<>();
             Integer i = 1;
             Integer nbIds = idVilles.size();
-            if(nbIds > 0){
+            if (nbIds > 0) {
                 String data = String.valueOf(idVilles.get(0));
-                while(i < nbIds){
+                while (i < nbIds) {
                     data += "&" + String.valueOf(idVilles.get(i));
                     i++;
                 }
                 params.put("idVilles", data);
             }
-            if(!libelle.equals(""))
+            if (!libelle.equals(""))
                 params.put("libelle", libelle);
 
             HttpURLConnection conn = WebService.post(getPharmaciesByLibelleAndVillesUrl, params);
-            return new Gson().fromJson(new InputStreamReader(conn.getInputStream()), new TypeToken<List<Pharmacie>>(){}.getType());
+            return new Gson().fromJson(new InputStreamReader(conn.getInputStream()), new TypeToken<List<Pharmacie>>() {
+            }.getType());
         } catch (Exception ignored) {
         }
         return null;

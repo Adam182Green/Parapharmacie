@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((Parapharmacie)getApplication()).setCurrentUser(new Client("nom", "prenom", "2016-08-14", "email","password","telephone","adresse",1,"020202"));
+        //((Parapharmacie)getApplication()).setCurrentUser(new Client("nom", "prenom", "2016-08-14", "email","password","telephone","adresse",1,"020202"));
         if(((Parapharmacie)getApplication()).getCurrentUser() == null){
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             this.finish();
@@ -72,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             case R.id.menuItemLogout:
                 //Todo Déconnexion
-                Toast.makeText(getApplicationContext(), "Déconnexion", Toast.LENGTH_LONG).show();
+                Toast.makeText(HomeActivity.this, "Déconnexion", Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

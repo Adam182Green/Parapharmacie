@@ -74,7 +74,7 @@ public class NewCommandeActivity2 extends AppCompatActivity {
             }
         });
 
-        final VilleAdapter villeAdapter = new VilleAdapter(getApplicationContext(), villesChoisies);
+        final VilleAdapter villeAdapter = new VilleAdapter(NewCommandeActivity2.this, villesChoisies);
         listeVillesChoisiesLV2.setAdapter(villeAdapter);
 
         ajouterVilleB2.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +114,7 @@ public class NewCommandeActivity2 extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Departement> departements){
-            ArrayAdapter<Departement> adapter = new ArrayAdapter<Departement>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, departements);
+            ArrayAdapter<Departement> adapter = new ArrayAdapter<Departement>(NewCommandeActivity2.this, android.R.layout.simple_spinner_dropdown_item, departements);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             departementsS2.setAdapter(adapter);
             WebService.disconnect();
@@ -134,7 +134,7 @@ public class NewCommandeActivity2 extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Ville> result) {
-            ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, result);
+            ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(NewCommandeActivity2.this, android.R.layout.simple_spinner_dropdown_item, result);
             villeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             villesS2.setAdapter(villeArrayAdapter);
             WebService.disconnect();
@@ -155,7 +155,7 @@ public class NewCommandeActivity2 extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<Ville> result) {
             if(result != null) {
-                ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, result);
+                ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(NewCommandeActivity2.this, android.R.layout.simple_spinner_dropdown_item, result);
                 villeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 villesS2.setAdapter(villeArrayAdapter);
             }

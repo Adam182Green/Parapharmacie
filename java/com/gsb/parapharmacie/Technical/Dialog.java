@@ -37,9 +37,7 @@ public abstract class Dialog {
     }
 
     public static void ajouterAuPanier(Context context, Produit produit) {
-
-
-        new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.DialogTheme))
+        new AlertDialog.Builder(context)
                 .setTitle("Ajouter " + produit.getLibelle() + " à votre panier")
                 .setView(R.layout.activity_ajouteraupanier)
                 .setPositiveButton("Ajouter", new DialogInterface.OnClickListener() {

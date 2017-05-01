@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!--TODO Détails de la commande en bref => panier + prix total / pharmacie + adresse-->
-    <!--Sorte de ticket de caisse (?)-->
+    <TextView
+        android:id="@+id/newCommande4TVClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Client" />
+
+    <TextView
+        android:id="@+id/newCommande4TVClientInfos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVClient" />
+
+    <TextView
+        android:id="@+id/newCommande4TVClientAdresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVClientInfos" />
+
+    <TextView
+        android:id="@+id/newCommande4TVPharmacie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVClientAdresse"
+        android:layout_centerHorizontal="true"
+        android:text="Pharmacie" />
+
+    <TextView
+        android:id="@+id/newCommande4TVPharmacieInfos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVPharmacie" />
+
+    <TextView
+        android:id="@+id/newCommande4TVPharmacieAdresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVPharmacieInfos" />
+
+    <TextView
+        android:id="@+id/newCommande4TVPanier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVPharmacieAdresse"
+        android:layout_centerHorizontal="true"
+        android:text="Panier" />
+
+    <TextView
+        android:id="@+id/newCommande4TVPanierInfos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande4TVPanier" />
 
     <Button
         android:id="@+id/newCommande4BCreer"
@@ -11,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_below="@id/newCommande4TVPanierInfos"
         android:layout_centerHorizontal="true"
         android:hint="Créer" />
 

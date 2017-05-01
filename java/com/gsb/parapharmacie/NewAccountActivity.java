@@ -21,6 +21,7 @@ import com.gsb.parapharmacie.Technical.Dialog;
 import com.gsb.parapharmacie.Technical.VilleService;
 import com.gsb.parapharmacie.Technical.WebService;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class NewAccountActivity extends AppCompatActivity {
@@ -70,8 +71,13 @@ public class NewAccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO Vérifier que le formulaire soit remplie et valide / (?) Âge > 16 ans (?)
                 CreateNewClientTask task = new CreateNewClientTask();
-                String date = String.valueOf(dateNaissanceDP.getYear()) + "-" + String.valueOf(dateNaissanceDP.getMonth())
-                        + "-" + String.valueOf(dateNaissanceDP.getDayOfMonth());
+                String day = String.valueOf(dateNaissanceDP.getDayOfMonth());
+                if(day.length() == 1)
+                    day = "0" + day;
+                String month = String.valueOf(dateNaissanceDP.getMonth() + 1);
+                if(month.length() == 1)
+                    month = "0" + month;
+                String date = String.valueOf(dateNaissanceDP.getYear()) + "-" + month + "-" + day;
                 Client client = new Client(nomET.getText().toString(), prenomET.getText().toString(), date,
                         emailET.getText().toString(), mdpET.getText().toString(), telephoneET.getText().toString(),
                         adresseET.getText().toString(), ((Ville)villesS.getSelectedItem()).getId(), numSSET.getText().toString());
@@ -93,7 +99,7 @@ public class NewAccountActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Ville> result) {
-            ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, result);
+            ArrayAdapter<Ville> villeArrayAdapter = new ArrayAdapter<Ville>(NewAccountActivity.this, android.R.layout.simple_spinner_dropdown_item, result);
             villeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             villesS.setAdapter(villeArrayAdapter);
             WebService.disconnect();

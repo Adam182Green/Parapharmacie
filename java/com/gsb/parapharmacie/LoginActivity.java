@@ -77,7 +77,6 @@ public class LoginActivity extends AppCompatActivity {
                 if(result == null)
                     Dialog.custom(context, "Erreur", "Vous avez saisi un email ou un mot de passe incorrect.");
                 else {
-                    Dialog.custom(context, "Succes", "Vous avez saisi un email et un mot de passe correct.");
                     ((Parapharmacie) getApplication()).setCurrentUser(result);
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     finishAffinity();

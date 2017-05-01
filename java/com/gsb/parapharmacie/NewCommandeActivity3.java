@@ -17,6 +17,7 @@ import com.gsb.parapharmacie.Models.Ville;
 import com.gsb.parapharmacie.PostObjects.PharmacieFilterByLibelleAndVilles;
 import com.gsb.parapharmacie.Technical.Dialog;
 import com.gsb.parapharmacie.Technical.PharmacieService;
+import com.gsb.parapharmacie.Technical.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,13 +26,13 @@ public class NewCommandeActivity3 extends AppCompatActivity {
 
     private ListView pharmaciesLV3;
     private Button suivantB3;
-    private Pharmacie pharmacieChoisie = null;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newcommande3listepharmacies);
+
+        Utility.pharmacieChoisie = null;
 
         setViews();
 
@@ -39,16 +40,15 @@ public class NewCommandeActivity3 extends AppCompatActivity {
         filterParams.Libelle = getIntent().getStringExtra("libellePharmacie");
         filterParams.VillesChoisies = getIntent().getParcelableArrayListExtra("villesChoisies");
 
-        context = NewCommandeActivity3.this;
-
         suivantB3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pharmacieChoisie == null) {
-                    Dialog.custom(context, "Attention", "Veuillez sélectionner une pharmacie.");
+                if (Utility.pharmacieChoisie == null) {
+                    Dialog.custom(NewCommandeActivity3.this, "Attention", "Veuillez sélectionner une pharmacie.");
                 } else {
                     Intent intent = new Intent(NewCommandeActivity3.this, NewCommandeActivity4.class);
-                    intent.putExtra("pharmacieChoisie", pharmacieChoisie);
+                    intent.putExtra("pharmacieChoisie", Utility.pharmacieChoisie);
+                    startActivity(intent);
                 }
             }
         });
@@ -74,9 +74,9 @@ public class NewCommandeActivity3 extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<Pharmacie> pharmacies) {
             if (pharmacies == null || pharmacies.size() == 0) {
-                Dialog.custom(getApplicationContext(), "Pas de pharmacies", "Il n'y a pas de pharmacies correspondant aux critères de recherche.");
+                Dialog.custom(NewCommandeActivity3.this, "Pas de pharmacies", "Il n'y a pas de pharmacies correspondant aux critères de recherche.");
             } else {
-                PharmacieAdapter adapter = new PharmacieAdapter(getApplicationContext(), pharmacies, pharmacieChoisie);
+                PharmacieAdapter adapter = new PharmacieAdapter(NewCommandeActivity3.this, pharmacies);
                 pharmaciesLV3.setAdapter(adapter);
             }
         }

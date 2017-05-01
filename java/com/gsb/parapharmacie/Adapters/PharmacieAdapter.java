@@ -9,10 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.gsb.parapharmacie.Application.Parapharmacie;
 import com.gsb.parapharmacie.Models.Pharmacie;
 import com.gsb.parapharmacie.Models.Ville;
 import com.gsb.parapharmacie.R;
 import com.gsb.parapharmacie.Technical.Dialog;
+import com.gsb.parapharmacie.Technical.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,14 +22,12 @@ import java.util.List;
 public class PharmacieAdapter extends ArrayAdapter<Pharmacie> {
 
     private List<Pharmacie> pharmacies;
-    public Pharmacie phamacieChoisie;
     public Context context;
 
-    public PharmacieAdapter(Context context, List<Pharmacie> pharmacies, Pharmacie pharmacieChoisie) {
+    public PharmacieAdapter(Context context, List<Pharmacie> pharmacies) {
         super(context, 0, pharmacies);
         this.context = context;
         this.pharmacies = pharmacies;
-        this.phamacieChoisie = pharmacieChoisie;
     }
 
     @NonNull
@@ -53,8 +53,8 @@ public class PharmacieAdapter extends ArrayAdapter<Pharmacie> {
         choisir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phamacieChoisie = pharmacies.get(position);
-                Dialog.custom(context, "Information", "Vous venez de choisir la pharmacie " + phamacieChoisie.getLibelle());
+                Utility.pharmacieChoisie = pharmacies.get(position);
+                Dialog.custom(context, "Information", "Vous venez de choisir la pharmacie " + Utility.pharmacieChoisie.getLibelle());
             }
         });
 

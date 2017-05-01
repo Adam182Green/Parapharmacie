@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -8,14 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">#000000</item>
         <item name="android:colorBackground">@android:color/background_light</item>
+        <item name="android:statusBarColor">@android:color/holo_blue_dark</item>
     </style>
-
-    <style name="DialogTheme" parent="DialogTheme">
-        <item name="android:windowNoTitle">true</item>
-    </style>
-
-    <style name="App.Comp" parent="@android:style/Widget.Button">
-        <item name="android:background">@color/colorAccent</item>
-    </style>
-
 </resources>

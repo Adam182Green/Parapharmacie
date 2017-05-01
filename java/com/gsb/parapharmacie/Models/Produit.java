@@ -9,7 +9,7 @@ import java.util.List;
 public class Produit implements Parcelable {
     private int id;
     private String libelle;
-    private float prix;
+    private double prix;
     private List<Composant> composants;
 
     public int getId() {
@@ -26,10 +26,10 @@ public class Produit implements Parcelable {
         this.libelle = libelle;
     }
 
-    public float getPrix() {
+    public double getPrix() {
         return prix;
     }
-    public void setPrix(float prix) {
+    public void setPrix(double prix) {
         this.prix = prix;
     }
 
@@ -50,7 +50,7 @@ public class Produit implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.id);
         dest.writeString(this.libelle);
-        dest.writeFloat(this.prix);
+        dest.writeDouble(this.prix);
         dest.writeList(this.composants);
     }
 
@@ -67,7 +67,7 @@ public class Produit implements Parcelable {
     private Produit(Parcel in) {
         this.id = in.readInt();
         this.libelle = in.readString();
-        this.prix = in.readFloat();
+        this.prix = in.readDouble();
         this.composants = new ArrayList<Composant>();
         in.readList(this.composants, Composant.class.getClassLoader());
     }

@@ -44,7 +44,7 @@ public class ListeProduitsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<Produit> result){
             if(result != null){
-                ArrayAdapter<Produit> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,
+                ArrayAdapter<Produit> adapter = new ArrayAdapter<Produit>(getApplicationContext(), android.R.layout.simple_list_item_1,
                         result);
                 produitsLV.setAdapter(adapter);
                 produitsLV.setOnItemClickListener(new AdapterView.OnItemClickListener(){

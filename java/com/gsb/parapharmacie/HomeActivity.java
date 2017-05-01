@@ -37,7 +37,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, PanierActivity.class));
-//              Toast.makeText(getApplicationContext(), "Le Panier",  Toast.LENGTH_LONG).show();
             }
         });
 

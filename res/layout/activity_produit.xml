@@ -10,13 +10,18 @@
         <TextView
             android:id="@+id/produitTVLibelleProduit"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/produitTVPrixUnitaire"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"/>
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
 
 
     </LinearLayout>
@@ -25,13 +30,21 @@
         android:id="@+id/produitLVComposants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/produitLinearLayout"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/produitLinearLayout"
+        android:cacheColorHint="@android:color/holo_orange_dark" />
 
     <Button
         android:id="@+id/produitBAjouterAuPanier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/produitLVComposants"
-        android:hint="Ajouter au panier"/>
+        android:layout_below="@+id/produitLVComposants"
+        android:layout_centerHorizontal="true"
+        android:elevation="12dp"
+        android:hint="Ajouter au panier"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp" />
 
 </RelativeLayout>

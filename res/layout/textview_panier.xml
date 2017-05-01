@@ -9,12 +9,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/panierTVLibelleProduit"
+            android:id="@+id/textview_panierTVLibelleProduit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/panierPrixUnitaire"
+            android:id="@+id/textview_panierPrixUnitaire"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"/>
@@ -28,12 +28,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/panierTVQuantite"
+            android:id="@+id/textview_panierTVQuantite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/panierTVPrixTotal"
+            android:id="@+id/textview_panierTVPrixTotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"/>

@@ -7,12 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
+    <TextView
+        android:id="@+id/newCommande1TVPrixTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newCommande1LVPanier"/>
+
     <Button
         android:id="@+id/newCommande1BSuivant"
         android:hint="Suivant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/newCommande1LVPanier"/>
+        android:layout_below="@id/newCommande1TVPrixTotal"/>
 
 </RelativeLayout>

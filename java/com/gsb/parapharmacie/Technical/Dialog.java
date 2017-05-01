@@ -3,6 +3,7 @@ package com.gsb.parapharmacie.Technical;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ContextThemeWrapper;
 
 import com.gsb.parapharmacie.Models.Produit;
 import com.gsb.parapharmacie.R;
@@ -38,7 +39,7 @@ public abstract class Dialog {
     public static void ajouterAuPanier(Context context, Produit produit) {
 
 
-        new AlertDialog.Builder(context)
+        new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.DialogTheme))
                 .setTitle("Ajouter " + produit.getLibelle() + " à votre panier")
                 .setView(R.layout.activity_ajouteraupanier)
                 .setPositiveButton("Ajouter", new DialogInterface.OnClickListener() {

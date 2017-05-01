@@ -71,8 +71,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ProfilActivity.class));
                 return true;
             case R.id.menuItemLogout:
-                //Todo Déconnexion
-                Toast.makeText(HomeActivity.this, "Déconnexion", Toast.LENGTH_LONG).show();
+                ((Parapharmacie)getApplication()).setCurrentUser(null);
+                startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+                finishAffinity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

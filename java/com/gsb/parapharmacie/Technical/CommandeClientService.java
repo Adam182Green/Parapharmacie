@@ -45,6 +45,7 @@ public abstract class CommandeClientService {
         } catch (Exception ignored) {
         }
         return false;
+    }
 
     public static CommandeClient getCommandeClientById(Integer id) throws Exception {
         try {

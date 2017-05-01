@@ -15,7 +15,8 @@ import java.util.Map;
 public abstract class CommandeClientService {
 
     private static final String createUrl = "http://poujat-thibault.fr/api/commande_client/create.php";
-
+    private final static String getCommandeClientById = "http://poujat-thibault.fr/api/commande_client/getCommandeClientById.php";
+  
     public static Boolean create(CommandeClient commande) throws Exception {
         try {
             Map<String, String> params = new LinkedHashMap<>();
@@ -44,5 +45,15 @@ public abstract class CommandeClientService {
         } catch (Exception ignored) {
         }
         return false;
+
+    public static CommandeClient getCommandeClientById(Integer id) throws Exception {
+        try {
+            Map<String, String> params = new LinkedHashMap<>();
+            params.put("id", String.valueOf(id));
+            HttpURLConnection conn = WebService.post(getCommandeClientById, params);
+            return new Gson().fromJson(new InputStreamReader(conn.getInputStream()), CommandeClient.class);
+        } catch (Exception ignored) {
+        }
+        return null;
     }
 }

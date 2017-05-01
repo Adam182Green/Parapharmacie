@@ -1,79 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.gsb.parapharmacie.HomeActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp">
-
-    <ImageButton
-        android:id="@+id/panierIB"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:adjustViewBounds="false"
-        android:backgroundTint="@color/colorPrimary"
-        android:contentDescription="Panier"
-        android:elevation="12dp"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toTopOf="@+id/commandeIB"
-        app:layout_constraintLeft_toLeftOf="@+id/commandeIB"
-        app:srcCompat="@drawable/panier"
-        tools:ignore="HardcodedText"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1" />
-
-    <ImageButton
-        android:id="@+id/commandeIB"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        android:adjustViewBounds="false"
-        android:backgroundTint="@color/colorPrimary"
-        android:contentDescription="Commande"
-        android:cropToPadding="false"
-        android:elevation="12dp"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toTopOf="@+id/produitIB"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/produitIB"
-        app:layout_constraintRight_toRightOf="@+id/produitIB"
-        app:srcCompat="@drawable/commande4"
-        tools:ignore="HardcodedText"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
-
-    <ImageButton
-        android:id="@+id/produitIB"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:contentDescription="Produits"
-        android:elevation="12dp"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/produits2"
-        tools:ignore="HardcodedText"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/logoIV"
-        android:layout_width="304dp"
+        android:id="@+id/logoGsbIV"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="false"
-        android:contentDescription="Logo GSB"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/logo_gsb"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteY="-19dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/logo_gsb" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logoGsbIV"
+        android:layout_margin="75dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/produitIB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/produits2" />
+
+        <ImageButton
+            android:id="@+id/panierIB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/panier" />
+
+        <ImageButton
+            android:id="@+id/commandeIB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/commande4" />
+    </LinearLayout>
+
+</RelativeLayout>

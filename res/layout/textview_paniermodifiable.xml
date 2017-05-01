@@ -42,9 +42,10 @@
 
     <Button
         android:id="@+id/textview_paniermodifiableBSupprimer"
-        android:hint="Supprimer"
-        android:layout_gravity="center_horizontal"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="Supprimer" />
 
 </LinearLayout>

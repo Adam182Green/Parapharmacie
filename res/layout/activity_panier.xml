@@ -4,15 +4,22 @@
 
     <TextView
         android:id="@+id/panierTVVotrePanier"
-        android:text="Contenu de votre panier:"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Contenu de votre panier:"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/panierLVPanier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/panierTVVotrePanier"/>
+        android:layout_below="@id/panierTVVotrePanier"
+        android:headerDividersEnabled="false" />
 
     <TextView
         android:id="@+id/panierTVPrixTotal"

@@ -34,17 +34,19 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/ajouterAuPanierBAjouter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Ajouter"/>
+        <Button
+            android:id="@+id/ajouterAuPanierBAjouter"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ajouter" />
 
-    <Button
-        android:id="@+id/ajouterAuPanierBAnnuler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Annuler"/>
+        <Button
+            android:id="@+id/ajouterAuPanierBAnnuler"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Annuler" />
 
     </LinearLayout>
 </LinearLayout>

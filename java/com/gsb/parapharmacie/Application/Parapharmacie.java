@@ -45,7 +45,6 @@ public class Parapharmacie extends Application {
         return i;
     }
 
-
     private int getIndex(Produit produit){
         int indexProduit = -1;
         int i = 0;

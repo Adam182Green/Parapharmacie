@@ -41,10 +41,12 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
         else
             quantiteTV.setText("Quantité à ajouter à votre panier :");
 
+       setPrixTotalTV(produit.getPrix(), quantiteNP.getValue());
+
         quantiteNP.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                prixTotalTV.setText("Prix total: " + Utility.roundPrice(produit.getPrix() * newVal) + "€");
+               setPrixTotalTV(produit.getPrix(), newVal);
             }
         });
 
@@ -62,6 +64,10 @@ public class AjouterAuPanierActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void setPrixTotalTV(double prix, int quantite){
+        prixTotalTV.setText("Prix total: " + Utility.roundPrice(prix * quantite) + "€");
     }
 
     private void setViews() {

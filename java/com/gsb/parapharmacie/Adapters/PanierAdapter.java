@@ -32,7 +32,7 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
 
         TextView libelleProduitTV = (TextView) convertView.findViewById(R.id.textview_panierTVLibelleProduit);
         TextView quantiteTV = (TextView) convertView.findViewById(R.id.textview_panierTVQuantite);
-        TextView prixUnitaireTV = (TextView) convertView.findViewById(R.id.textview_panierPrixUnitaire);
+        TextView prixUnitaireTV = (TextView) convertView.findViewById(R.id.textview_panierTVPrixUnitaire);
         TextView prixTotalTV = (TextView) convertView.findViewById(R.id.textview_panierTVPrixTotal);
 
         if (pCC != null) {
@@ -45,4 +45,5 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
 
         return convertView;
     }
+
 }

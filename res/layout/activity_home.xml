@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/produitIB"
         app:layout_constraintRight_toRightOf="@+id/produitIB"
-        app:srcCompat="@drawable/commande"
+        app:srcCompat="@drawable/commande4"
         tools:ignore="HardcodedText"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
@@ -75,5 +75,5 @@
         app:srcCompat="@drawable/logo_gsb"
         tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteY="-19dp" />
-  
+
 </android.support.constraint.ConstraintLayout>

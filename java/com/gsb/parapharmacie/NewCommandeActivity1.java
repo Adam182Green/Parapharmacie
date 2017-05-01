@@ -82,7 +82,6 @@ public class NewCommandeActivity1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private void setViews() {

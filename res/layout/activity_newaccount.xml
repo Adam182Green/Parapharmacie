@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <EditText
+            android:id="@+id/newAccountETPrenom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Prénom"
+            android:layout_toLeftOf="@+id/newAccountETEmail"
+            android:layout_toStartOf="@+id/newAccountETEmail" />
+        <EditText
+            android:id="@+id/newAccountETNom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:layout_toRightOf="@+id/newAccountETEmail"
+            android:layout_toEndOf="@id/newAccountETEmail"/>
+
+        <DatePicker
+            android:id="@+id/newAccountDPDateNaissance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_marginTop="-30dp"
+            android:layout_marginBottom="-30dp"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETNom"/>
+
+        <EditText
+            android:id="@+id/newAccountETAdresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Adresse"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountDPDateNaissance"/>
+
+        <EditText
+            android:id="@+id/newAccountETCodePostal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Code postal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETAdresse"/>
+
+        <Button
+            android:id="@+id/newAccountBRechercherVille"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newAccountETAdresse"
+            android:layout_toRightOf="@+id/newAccountETCodePostal"
+            android:hint="Rechercher villes" />
+
+        <Spinner
+            android:id="@+id/newAccountSVilles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETCodePostal"/>
+
+        <EditText
+            android:id="@+id/newAccountETTelephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Téléphone"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountSVilles"/>
+
+        <EditText
+            android:id="@+id/newAccountETNumSS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Numéro de sécurité sociale"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETTelephone"/>
+
+        <EditText
+            android:id="@+id/newAccountETEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETNumSS"/>
+
+        <EditText
+            android:id="@+id/newAccountETMdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Mot de passe"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETEmail"/>
+
+        <EditText
+            android:id="@+id/newAccountETMdpConfirmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Confirmez mot de passe"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/newAccountETMdp"/>
+
+        <Button
+            android:id="@+id/newAccountBNouvCompte"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newAccountETMdpConfirmer"
+            android:layout_centerHorizontal="true"
+            android:text="Créer" />
+
+        <TextView
+            android:id="@+id/newAccountTVGoToLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:text="Vous avez déjà un compte ? Connectez vous"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

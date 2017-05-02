@@ -9,7 +9,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textview_commandeTVPharmacieNom"
+            android:id="@+id/textview_commandeTVEtat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -18,7 +18,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:id="@+id/textview_commandeTVDateModification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview_commandeTVPharmacieNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textview_commandeTVPharmacieAdresse"

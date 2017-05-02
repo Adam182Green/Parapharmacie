@@ -50,5 +50,4 @@ public class CommandeActivity extends AppCompatActivity {
     private void setViews(){
         commandesLV = (ListView) findViewById(R.id.commandeLVCommandes);
     }
-
 }

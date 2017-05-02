@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gsb.parapharmacie.Models.CommandeClient;
+import com.gsb.parapharmacie.Models.Etat;
 import com.gsb.parapharmacie.Models.Pharmacie;
 import com.gsb.parapharmacie.R;
 
@@ -36,15 +37,25 @@ public class CommandeAdapter extends ArrayAdapter<CommandeClient> {
                     false);
         }
 
+        TextView etat = (TextView) convertView.findViewById(R.id.textview_commandeTVEtat);
+        TextView dateCreation = (TextView) convertView.findViewById(R.id.textview_commandeTVDateCreation);
+        TextView dateModification = (TextView) convertView.findViewById(R.id.textview_commandeTVDateModification);
         TextView nomPharmacie = (TextView) convertView.findViewById(R.id.textview_commandeTVPharmacieNom);
         TextView adressePharmacie = (TextView) convertView.findViewById(R.id.textview_commandeTVPharmacieAdresse);
-        TextView dateCreation = (TextView) convertView.findViewById(R.id.textview_commandeTVDateCreation);
         ListView pCC = (ListView) convertView.findViewById(R.id.textview_commandeLVProduits);
 
+        Etat e = commande.getEtat();
+
+        etat.setText("Etat : " + e.getTypeEtat());
+        dateCreation.setText("Créée le " + commande.getDateCreation()); //TODO Afficher la date mieux
+        String dateMod = "Modifiée le " + e.getDateModification();
+        if(e.getTypeEtat().equals("Prête"))
+            dateMod += " \n " + "Votre commande sera prête le " + e.getDatePrete();
+        dateModification.setText(dateMod);
         Pharmacie pharmacie = commande.getPharmacie();
         nomPharmacie.setText(pharmacie.getLibelle());
         adressePharmacie.setText(pharmacie.getAdresse());
-        dateCreation.setText(commande.getDateCreation()); //TODO Afficher la date mieux
+
         pCC.setAdapter(new PanierAdapter(context, commande.getProduitCommandeClients()));
 
         return convertView;

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Recherche :"
-            android:layout_margin="30dp"
+            android:layout_margin="25dp"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="35sp"
@@ -110,7 +110,7 @@
             android:layout_centerHorizontal="true" />
 
         <TextView
-            android:id="@+id/newCOmmande2TVVillesChoisies"
+            android:id="@+id/newCommande2TVVillesChoisies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Liste des villes choisies :"
@@ -127,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_below="@+id/newCOmmande2TVVillesChoisies"
+            android:layout_below="@+id/newCommande2TVVillesChoisies"
             android:layout_centerHorizontal="true" />
 
         <Button

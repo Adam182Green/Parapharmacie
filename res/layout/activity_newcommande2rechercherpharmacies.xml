@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Recherche :"
-            android:layout_margin="30dp"
+            android:layout_margin="25dp"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="35sp"
@@ -61,8 +61,8 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:layout_below="@+id/newCommande2ETRechercherVilleParCodePostal"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignLeft="@+id/newCommande2LVListeVillesChoisies"
+            android:layout_alignStart="@+id/newCommande2LVListeVillesChoisies" />
 
         <Spinner
             android:id="@+id/newCommande2SDepartements"
@@ -83,10 +83,9 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:layout_below="@+id/newCommande2TVRechercherVilleParDepartement"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_toLeftOf="@+id/newCommande2SDepartements"
-            android:layout_toStartOf="@+id/newCommande2SDepartements" />
+            android:layout_alignLeft="@+id/newCommande2TVRechercherVilleParDepartement"
+            android:layout_alignStart="@+id/newCommande2TVRechercherVilleParDepartement" />
 
         <Spinner
             android:id="@+id/newCommande2SVilles"
@@ -110,7 +109,7 @@
             android:layout_centerHorizontal="true" />
 
         <TextView
-            android:id="@+id/newCOmmande2TVVillesChoisies"
+            android:id="@+id/newCommande2TVVillesChoisies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Liste des villes choisies :"

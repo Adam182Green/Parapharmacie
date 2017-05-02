@@ -4,66 +4,112 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/newCommande4TVClient"
-        android:layout_width="wrap_content"
+        android:id="@+id/confirmationTVcommande4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Client" />
+        android:layout_margin="30dp"
+        android:text="Confirmation"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/newCommande4TVClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/confirmationTVcommande4"
+        android:layout_marginBottom="10dp"
+        android:text="Client"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/newCommande4TVClientInfos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVClient" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newCommande4TVClient"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/newCommande4TVClientAdresse"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVClientInfos" />
+        android:layout_below="@id/newCommande4TVClientInfos"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/newCommande4TVPharmacie"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVClientAdresse"
-        android:layout_centerHorizontal="true"
-        android:text="Pharmacie" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newCommande4TVClientAdresse"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="29dp"
+        android:text="Pharmacie"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/newCommande4TVPharmacieInfos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVPharmacie" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newCommande4TVPharmacie"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/newCommande4TVPharmacieAdresse"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVPharmacieInfos" />
+        android:layout_below="@id/newCommande4TVPharmacieInfos"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/newCommande4TVPanier"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVPharmacieAdresse"
-        android:layout_centerHorizontal="true"
-        android:text="Panier" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newCommande4TVPharmacieAdresse"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="28dp"
+        android:text="Panier"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/newCommande4TVPanierInfos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/newCommande4TVPanier" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newCommande4TVPanier"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/newCommande4BCreer"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_below="@id/newCommande4TVPanierInfos"
+        android:layout_below="@+id/newCommande4TVPanierInfos"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
         android:hint="Créer" />
 
 </RelativeLayout>

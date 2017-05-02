@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/villeBSupprimer"
         android:layout_toStartOf="@+id/villeBSupprimer"
-        android:gravity="start"
+        android:gravity="center"
         android:textColor="@color/colorPrimary" />
 
     <Button
@@ -22,7 +22,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="end"
+        android:gravity="center"
         android:hint="Supprimer"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

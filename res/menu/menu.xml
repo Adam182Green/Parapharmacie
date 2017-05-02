@@ -5,13 +5,17 @@
     <item
         android:id="@+id/menuItemPanier"
         android:orderInCategory="1"
-        android:title="Mon Panier" />
+        android:title="Mon panier" />
+    <item
+        android:id="@+id/menuItemCommandes"
+        android:orderInCategory="2"
+        android:title="Mes commandes"/>
     <item
         android:id="@+id/menuItemProfil"
-        android:orderInCategory="2"
+        android:orderInCategory="3"
         android:title="Mon profil" />
     <item
         android:id="@+id/menuItemLogout"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         android:title="Déconnexion"/>
 </menu>

@@ -23,7 +23,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //((Parapharmacie)getApplication()).setCurrentUser(new Client("nom", "prenom", "2016-08-14", "email","password","telephone","adresse",1,"020202"));
         if(((Parapharmacie)getApplication()).getCurrentUser() == null){
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             this.finish();
@@ -64,6 +63,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menuItemCommandes:
+                startActivity(new Intent(HomeActivity.this, CommandeActivity.class));
+                return true;
             case R.id.menuItemPanier:
                 startActivity(new Intent(HomeActivity.this, PanierActivity.class));
                 return true;

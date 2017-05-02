@@ -19,7 +19,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/logoGsbIV"
-        android:layout_margin="75dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
         <ImageButton
@@ -35,14 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             app:srcCompat="@drawable/panier" />
 
         <ImageButton
             android:id="@+id/commandeIB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:srcCompat="@drawable/commande4" />
     </LinearLayout>
 

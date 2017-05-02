@@ -3,6 +3,7 @@
     <color name="colorPrimary">@android:color/holo_blue_light</color>
     <color name="colorPrimaryDark">#e5345d</color>
     <color name="colorAccent">#ffc400</color>
+    <color name="colorBleu">#66A3D3</color>
     <color name="vert">#84b60e</color>
     <color name="background_material_light">#1757c0cc</color>
 </resources>

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,6 +50,31 @@ public class ProduitActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuItemPanier:
+                startActivity(new Intent(ProduitActivity.this, PanierActivity.class));
+                return true;
+            case R.id.menuItemProfil:
+                startActivity(new Intent(ProduitActivity.this, ProfilActivity.class));
+                return true;
+            case R.id.menuItemLogout:
+                ((Parapharmacie)getApplication()).setCurrentUser(null);
+                startActivity(new Intent(ProduitActivity.this, LoginActivity.class));
+                finishAffinity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void setViews() {

@@ -11,7 +11,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_margin="25dp"
-        android:text="Recherche :"
+        android:text="Choix de la Pharmacie :"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp" />
@@ -28,6 +28,7 @@
         android:id="@+id/newCommande3BSuivant"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/newCommande3LVPharmacies"
         android:layout_centerHorizontal="true"

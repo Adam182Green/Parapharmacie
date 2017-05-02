@@ -20,6 +20,7 @@ public class CommandeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_commande);
 
         setViews();
 
@@ -40,7 +41,7 @@ public class CommandeActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<CommandeClient> commandes){
-            if(commandes != null){
+            if(commandes != null && commandes.size() != 0){
                 commandesLV.setAdapter(new CommandeAdapter(CommandeActivity.this, commandes));
             }
             WebService.disconnect();

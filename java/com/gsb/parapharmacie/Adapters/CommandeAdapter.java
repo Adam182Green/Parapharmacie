@@ -50,7 +50,7 @@ public class CommandeAdapter extends ArrayAdapter<CommandeClient> {
         dateCreation.setText("Créée le " + commande.getDateCreation()); //TODO Afficher la date mieux
         String dateMod = "Modifiée le " + e.getDateModification();
         if(e.getTypeEtat().equals("Prête"))
-            dateMod += " \n " + "Votre commande sera prête le " + e.getDatePrete();
+            dateMod += " \n" + "Votre commande sera prête le " + e.getDatePrete();
         dateModification.setText(dateMod);
         Pharmacie pharmacie = commande.getPharmacie();
         nomPharmacie.setText(pharmacie.getLibelle());

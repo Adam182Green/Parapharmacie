@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class CommandeClient {
-    private int id;
+    private String id;
     private String dateCreation;
     private int idClient;
     private Client client;
@@ -14,10 +14,10 @@ public class CommandeClient {
     private Etat etat;
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

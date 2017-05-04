@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.gsb.parapharmacie.Adapters.PharmacieAdapter;
+import com.gsb.parapharmacie.Application.Parapharmacie;
 import com.gsb.parapharmacie.Models.Pharmacie;
+import com.gsb.parapharmacie.Models.ProduitCommandeClient;
 import com.gsb.parapharmacie.Models.Ville;
 import com.gsb.parapharmacie.PostObjects.PharmacieFilterByLibelleAndVilles;
 import com.gsb.parapharmacie.Technical.Dialog;
@@ -26,11 +28,14 @@ public class NewCommandeActivity3 extends AppCompatActivity {
 
     private ListView pharmaciesLV3;
     private Button suivantB3;
+    private List<ProduitCommandeClient> panier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newcommande3listepharmacies);
+
+        panier = ((Parapharmacie)getApplication()).getPanier();
 
         Utility.pharmacieChoisie = null;
 
@@ -64,8 +69,9 @@ public class NewCommandeActivity3 extends AppCompatActivity {
                 List<Integer> idVilles = new ArrayList<Integer>();
                 for (Ville ville : params[0].VillesChoisies)
                     idVilles.add(ville.getId());
-                return PharmacieService.getPharmaciesByLibelleAndVilles(params[0].Libelle, idVilles);
+                return PharmacieService.getPharmaciesByLibelleAndVilles(params[0].Libelle, idVilles, panier);
             } catch (Exception e) {
+
                 e.printStackTrace();
             }
             return null;

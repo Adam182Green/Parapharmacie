@@ -4,19 +4,20 @@ import java.util.Date;
 import java.util.List;
 
 public class CommandeClient {
-    private int id;
+    private String id;
     private String dateCreation;
     private int idClient;
     private Client client;
     private int idPharmacie;
     private Pharmacie pharmacie;
     private List<ProduitCommandeClient> produitCommandeClients;
+    private Etat etat;
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -62,6 +63,12 @@ public class CommandeClient {
         this.produitCommandeClients = produitCommandeClients;
     }
 
+    public Etat getEtat() {
+        return etat;
+    }
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
 
     public CommandeClient(String dateCreation, int idClient, int idPharmacie, List<ProduitCommandeClient> produitCommandeClients) {
         this.dateCreation = dateCreation;

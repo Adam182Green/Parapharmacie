@@ -14,6 +14,7 @@ public class Pharmacie implements Parcelable {
     private Ville ville;
     private String telephone;
     private List<StockPharmacie> stockPharmacies;
+    private Boolean stockSuffisant;
 
     public int getId() {
         return id;
@@ -62,6 +63,13 @@ public class Pharmacie implements Parcelable {
     }
     public void setStockPharmacies(List<StockPharmacie> stockPharmacies) {
         this.stockPharmacies = stockPharmacies;
+    }
+
+    public Boolean getStockSuffisant() {
+        return stockSuffisant;
+    }
+    public void setStockSuffisant(Boolean stockSuffisant) {
+        this.stockSuffisant = stockSuffisant;
     }
 
     @Override

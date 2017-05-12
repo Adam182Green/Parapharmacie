@@ -39,8 +39,8 @@ public class PanierAdapter extends ArrayAdapter<ProduitCommandeClient> {
             Produit produit = pCC.getProduit();
             libelleProduitTV.setText(produit.getLibelle());
             quantiteTV.setText("Quantité : " + String.valueOf(pCC.getQuantite()));
-            prixUnitaireTV.setText("Prix /unité : " + String.valueOf(produit.getPrix()));
-            prixTotalTV.setText("Prix total : " + Utility.roundPrice(produit.getPrix() * pCC.getQuantite()));
+            prixUnitaireTV.setText("Prix /unité : " + String.valueOf(produit.getPrix()) + "€");
+            prixTotalTV.setText("Prix total : " + Utility.roundPrice(produit.getPrix() * pCC.getQuantite()) + "€");
         }
 
         return convertView;

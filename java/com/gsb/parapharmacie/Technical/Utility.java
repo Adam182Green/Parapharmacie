@@ -13,4 +13,9 @@ public abstract class Utility {
         bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
         return String.valueOf(bd);
     }
+
+    public static String convertDateString(String date){
+        String[] strings = date.split("-");
+        return strings[2] + "/" + strings[1] + "/" + strings[0];
+    }
 }

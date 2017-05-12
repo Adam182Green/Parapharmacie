@@ -12,42 +12,43 @@
             android:id="@+id/titreTVcommande2recherche"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Recherche :"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_margin="25dp"
+            android:text="Recherche :"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="35sp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textSize="35sp" />
 
         <EditText
             android:id="@+id/newCommande2ETRechercherPharmacieParLibelle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Rechercher pharmacie par nom"
-            android:layout_below="@+id/titreTVcommande2recherche"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignTop="@+id/titreTVcommande2recherche"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="51dp" />
 
         <TextView
             android:id="@+id/newCommande2TVRechercherParVille"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:text="Rechercher une ville :"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:layout_below="@+id/newCommande2ETRechercherPharmacieParLibelle"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="40dp" />
+            android:layout_alignParentStart="true" />
 
         <EditText
             android:id="@+id/newCommande2ETRechercherVilleParCodePostal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:hint="Par code postal"
-            android:layout_marginTop="22dp"
             android:layout_below="@+id/newCommande2TVRechercherParVille"
             android:layout_centerHorizontal="true" />
 
@@ -55,56 +56,56 @@
             android:id="@+id/newCommande2TVRechercherVilleParDepartement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/newCommande2ETRechercherVilleParCodePostal"
             android:layout_marginTop="16dp"
             android:hint="Rechercher ville par département:"
             android:text="Par département :"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            android:layout_below="@+id/newCommande2ETRechercherVilleParCodePostal"
-            android:layout_alignLeft="@+id/newCommande2LVListeVillesChoisies"
-            android:layout_alignStart="@+id/newCommande2LVListeVillesChoisies" />
+            android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/newCommande2SDepartements"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/newCommande2TVRechercherVilleParDepartement"
-            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/newCommande2TVRechercherVilleParDepartement"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/newCommande2TVRechercherVilleParDepartement"
-            android:layout_toRightOf="@+id/newCommande2TVRechercherVilleParDepartement"
-            android:layout_alignBottom="@+id/newCommande2TVRechercherVilleParDepartement" />
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/newCommande2TVRechercherVilleParDepartement"
+            android:layout_toEndOf="@+id/newCommande2BAjouterVille"
+            android:layout_toRightOf="@+id/newCommande2BAjouterVille" />
 
         <TextView
             android:id="@+id/newCommande2TVResultatsVillesParDepartement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Résultats des villes:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
+            android:layout_alignLeft="@+id/newCommande2TVRechercherVilleParDepartement"
+            android:layout_alignStart="@+id/newCommande2TVRechercherVilleParDepartement"
             android:layout_below="@+id/newCommande2TVRechercherVilleParDepartement"
             android:layout_toLeftOf="@+id/newCommande2SDepartements"
-            android:layout_alignLeft="@+id/newCommande2TVRechercherVilleParDepartement"
-            android:layout_alignStart="@+id/newCommande2TVRechercherVilleParDepartement" />
+            android:layout_toStartOf="@+id/newCommande2SDepartements"
+            android:text="Résultats des villes:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/newCommande2SVilles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/newCommande2TVResultatsVillesParDepartement"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignBottom="@+id/newCommande2TVResultatsVillesParDepartement"
             android:layout_alignLeft="@+id/newCommande2SDepartements"
-            android:layout_alignStart="@+id/newCommande2SDepartements" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/newCommande2SDepartements"
+            android:layout_alignTop="@+id/newCommande2TVResultatsVillesParDepartement" />
 
         <Button
             android:id="@+id/newCommande2BAjouterVille"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:hint="Ajouter"
-            android:layout_marginTop="32dp"
             android:layout_below="@+id/newCommande2TVResultatsVillesParDepartement"
             android:layout_centerHorizontal="true" />
 
@@ -112,22 +113,21 @@
             android:id="@+id/newCommande2TVVillesChoisies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Liste des villes choisies :"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:layout_below="@+id/newCommande2BAjouterVille"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="34dp" />
+            android:layout_alignParentStart="true" />
 
         <ListView
             android:id="@+id/newCommande2LVListeVillesChoisies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_below="@+id/newCommande2TVVillesChoisies"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@id/newCommande2TVVillesChoisies"/>
 
         <Button
             android:id="@+id/newCommande2BRechercher"

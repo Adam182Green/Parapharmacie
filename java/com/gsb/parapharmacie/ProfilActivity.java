@@ -42,6 +42,7 @@ public class ProfilActivity extends AppCompatActivity {
     private EditText mdpET;
     private EditText mdpConfirmET;
     private Button modifierB;
+    private Context context = this;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,25 @@ public class ProfilActivity extends AppCompatActivity {
         modifierB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Véifier que le formulaire soit complet et valide
-                new EditClientTask().execute(new Client("edit", "edit", "2017-08-14", "edit", "edit", "80080808", "edit", 1, "edit"));
+                if (!verifyForm()) {
+                    Dialog.formInvalide(context);
+                } else {
+                    if (!verifyMdp()) {
+                        Dialog.custom(context, "Attention", "Les deux mots de passe saisis ne se correspondent pas.");
+                    } else {
+                        String day = String.valueOf(dateNaissanceDP.getDayOfMonth());
+                        if (day.length() == 1)
+                            day = "0" + day;
+                        String month = String.valueOf(dateNaissanceDP.getMonth() + 1);
+                        if (month.length() == 1)
+                            month = "0" + month;
+                        String date = String.valueOf(dateNaissanceDP.getYear()) + "-" + month + "-" + day;
+                        Client client = new Client(nomET.getText().toString(), prenomET.getText().toString(), date,
+                                emailET.getText().toString(), mdpET.getText().toString(), telephoneET.getText().toString(),
+                                adresseET.getText().toString(), ((Ville) villesS.getSelectedItem()).getId(), numSSET.getText().toString());
+                        new EditClientTask().execute(client);
+                    }
+                }
             }
         });
 
@@ -118,6 +136,15 @@ public class ProfilActivity extends AppCompatActivity {
                 Dialog.custom(ProfilActivity.this, "Echec", "Il y a eu un erreur lors de la mise à jour de votre profil.");
             WebService.disconnect();
         }
+    }
+
+    private Boolean verifyForm() {
+        return !prenomET.getText().toString().equals("") && !nomET.getText().toString().equals("") && !adresseET.getText().toString().equals("") && !telephoneET.getText().toString().equals("")
+                && !numSSET.getText().toString().equals("") && !emailET.getText().toString().equals("") && !mdpET.getText().toString().equals("") && !mdpConfirmET.getText().toString().equals("");
+    }
+
+    private Boolean verifyMdp() {
+        return mdpET.getText().toString().equals(mdpConfirmET.getText().toString());
     }
 
     private void setViews() {

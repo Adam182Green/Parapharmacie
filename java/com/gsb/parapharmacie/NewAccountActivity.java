@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gsb.parapharmacie.Models.Client;
 import com.gsb.parapharmacie.Models.Ville;
@@ -31,7 +34,6 @@ public class NewAccountActivity extends AppCompatActivity {
     private DatePicker dateNaissanceDP;
     private EditText adresseET;
     private EditText codePostalET;
-    private Button rechercherVillesB;
     private Spinner villesS;
     private EditText telephoneET;
     private EditText numSSET;
@@ -56,32 +58,43 @@ public class NewAccountActivity extends AppCompatActivity {
             }
         });
 
-        rechercherVillesB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO Vérifier que le code postal saisi soit valide
-                //TODO Modifier onClick => onChange, exécuter task si codePostal contient 5 caractères
-                GetVillesByCodePostalTask task = new GetVillesByCodePostalTask();
-                task.execute(codePostalET.getText().toString());
+        codePostalET.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                String codePostal = codePostalET.getText().toString();
+                if (codePostal.length() == 5) {
+                    new GetVillesByCodePostalTask().execute(codePostal);
+                }
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
         });
 
         newAccountB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Vérifier que le formulaire soit remplie et valide / (?) Âge > 16 ans (?)
-                CreateNewClientTask task = new CreateNewClientTask();
-                String day = String.valueOf(dateNaissanceDP.getDayOfMonth());
-                if(day.length() == 1)
-                    day = "0" + day;
-                String month = String.valueOf(dateNaissanceDP.getMonth() + 1);
-                if(month.length() == 1)
-                    month = "0" + month;
-                String date = String.valueOf(dateNaissanceDP.getYear()) + "-" + month + "-" + day;
-                Client client = new Client(nomET.getText().toString(), prenomET.getText().toString(), date,
-                        emailET.getText().toString(), mdpET.getText().toString(), telephoneET.getText().toString(),
-                        adresseET.getText().toString(), ((Ville)villesS.getSelectedItem()).getId(), numSSET.getText().toString());
-                task.execute(client);
+                if (!verifyForm()) {
+                    Dialog.formInvalide(context);
+                } else {
+                    if (!verifyMdp()) {
+                        Dialog.custom(context, "Attention", "Les deux mots de passe saisis ne se correspondent pas.");
+                    } else {
+                        String day = String.valueOf(dateNaissanceDP.getDayOfMonth());
+                        if (day.length() == 1)
+                            day = "0" + day;
+                        String month = String.valueOf(dateNaissanceDP.getMonth() + 1);
+                        if (month.length() == 1)
+                            month = "0" + month;
+                        String date = String.valueOf(dateNaissanceDP.getYear()) + "-" + month + "-" + day;
+                        Client client = new Client(nomET.getText().toString(), prenomET.getText().toString(), date,
+                                emailET.getText().toString(), mdpET.getText().toString(), telephoneET.getText().toString(),
+                                adresseET.getText().toString(), ((Ville) villesS.getSelectedItem()).getId(), numSSET.getText().toString());
+                        new CreateNewClientTask().execute(client);
+                    }
+                }
             }
         });
     }
@@ -121,12 +134,21 @@ public class NewAccountActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean result) {
             WebService.disconnect();
             if (result) {
-                //TODO (?) Afficher "compte crée" (?)
+                Toast.makeText(context, "Compte crée.", Toast.LENGTH_SHORT);
                 startActivity(new Intent(NewAccountActivity.this, LoginActivity.class));
             } else {
                 Dialog.custom(context, "Erreur", "Erreur lors du création du compte.");
             }
         }
+    }
+
+    private Boolean verifyForm() {
+        return !prenomET.getText().toString().equals("") && !nomET.getText().toString().equals("") && !adresseET.getText().toString().equals("") && !telephoneET.getText().toString().equals("")
+                && !numSSET.getText().toString().equals("") && !emailET.getText().toString().equals("") && !mdpET.getText().toString().equals("") && !mdpConfirmET.getText().toString().equals("");
+    }
+
+    private Boolean verifyMdp() {
+        return mdpET.getText().toString().equals(mdpConfirmET.getText().toString());
     }
 
     private void setViews() {
@@ -135,7 +157,6 @@ public class NewAccountActivity extends AppCompatActivity {
         dateNaissanceDP = (DatePicker) findViewById(R.id.newAccountDPDateNaissance);
         adresseET = (EditText) findViewById(R.id.newAccountETAdresse);
         codePostalET = (EditText) findViewById(R.id.newAccountETCodePostal);
-        rechercherVillesB = (Button) findViewById(R.id.newAccountBRechercherVille);
         villesS = (Spinner) findViewById(R.id.newAccountSVilles);
         telephoneET = (EditText) findViewById(R.id.newAccountETTelephone);
         numSSET = (EditText) findViewById(R.id.newAccountETNumSS);

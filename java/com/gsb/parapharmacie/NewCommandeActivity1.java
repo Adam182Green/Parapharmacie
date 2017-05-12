@@ -63,7 +63,7 @@ public class NewCommandeActivity1 extends AppCompatActivity {
             for (ProduitCommandeClient pCC : panier) {
                 prixTotal += pCC.getProduit().getPrix() * pCC.getQuantite();
             }
-            prixTotalTV1.setText("Prix total :" + Utility.roundPrice(prixTotal));
+            prixTotalTV1.setText("Prix total : " + Utility.roundPrice(prixTotal) + "€");
 
             suivantB1.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -28,6 +28,9 @@ public class Parapharmacie extends Application {
             panier.remove(getIndex(produit));
         panier.add(new ProduitCommandeClient(produit, quantite));
     }
+    public void emptyPanier(){
+        panier = new ArrayList<ProduitCommandeClient>();
+    }
     public Boolean productAlreadyInPanier(Produit produit){
         int nbPdtsInCommande = panier.size();
         int i = 0;

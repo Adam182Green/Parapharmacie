@@ -104,8 +104,10 @@ public class NewCommandeActivity4 extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean result){
             WebService.disconnect();
-            if(result)
+            if(result) {
+                ((Parapharmacie) getApplication()).emptyPanier();
                 Dialog.custom(NewCommandeActivity4.this, "Succès", "Commande créée.");
+            }
             else
                 Dialog.custom(NewCommandeActivity4.this, "Erreur", "Commande non-créée.");
         }

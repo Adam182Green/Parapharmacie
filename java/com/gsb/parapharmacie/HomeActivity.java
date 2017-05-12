@@ -74,6 +74,7 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             case R.id.menuItemLogout:
                 ((Parapharmacie)getApplication()).setCurrentUser(null);
+                ((Parapharmacie)getApplication()).emptyPanier();
                 startActivity(new Intent(HomeActivity.this, LoginActivity.class));
                 finishAffinity();
                 return true;

@@ -13,6 +13,7 @@ import com.gsb.parapharmacie.Models.CommandeClient;
 import com.gsb.parapharmacie.Models.Etat;
 import com.gsb.parapharmacie.Models.Pharmacie;
 import com.gsb.parapharmacie.R;
+import com.gsb.parapharmacie.Technical.Utility;
 
 import org.w3c.dom.Text;
 
@@ -47,10 +48,10 @@ public class CommandeAdapter extends ArrayAdapter<CommandeClient> {
         Etat e = commande.getEtat();
 
         etat.setText("Etat : " + e.getTypeEtat());
-        dateCreation.setText("Créée le " + commande.getDateCreation()); //TODO Afficher la date mieux
-        String dateMod = "Modifiée le " + e.getDateModification();
+        dateCreation.setText("Créée le " + Utility.convertDateString(commande.getDateCreation()));
+        String dateMod = "Modifiée le " + Utility.convertDateString(e.getDateModification());
         if(e.getTypeEtat().equals("Prête"))
-            dateMod += " \n" + "Votre commande sera prête le " + e.getDatePrete();
+            dateMod += " \n" + "Votre commande sera prête le " + Utility.convertDateString(e.getDatePrete());
         dateModification.setText(dateMod);
         Pharmacie pharmacie = commande.getPharmacie();
         nomPharmacie.setText(pharmacie.getLibelle());

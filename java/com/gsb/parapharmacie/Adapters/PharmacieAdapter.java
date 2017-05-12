@@ -1,7 +1,9 @@
 package com.gsb.parapharmacie.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +49,16 @@ public class PharmacieAdapter extends ArrayAdapter<Pharmacie> {
             nom.setText(pharmacie.getLibelle());
             adresse.setText(pharmacie.getAdresse());
             Ville v = pharmacie.getVille();
+
             ville.setText(v.getNom() + ", " + v.getCodePostal());
+
+            int colour = ResourcesCompat.getColor(context.getResources(), R.color.pharmacieRed, null);
+            if(pharmacie.getStockSuffisant())
+                colour = ResourcesCompat.getColor(context.getResources(), R.color.pharmacieGreen, null);
+
+            nom.setBackgroundColor(colour);
+            adresse.setBackgroundColor(colour);
+            ville.setBackgroundColor(colour);
         }
 
         choisir.setOnClickListener(new View.OnClickListener() {
